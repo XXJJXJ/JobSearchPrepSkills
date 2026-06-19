@@ -1,6 +1,6 @@
 ---
 name: build-job-study-guide
-description: Build a study document from a job analysis, job requirement breakdown, or job description. Use when Codex needs to identify skill gaps, search for current free learning materials, curate reputable free resources, organize a role-specific study plan, and create study notes with practice questions and answers for interview or job preparation.
+description: Build a Markdown or DOCX study document from a job analysis, job requirement breakdown, or job description. Use when Codex needs to identify skill gaps, search for current free learning materials, curate reputable free resources, organize a role-specific study plan, and create study notes, cheat sheets or cheatsheets, interview questions, and answers for job preparation.
 ---
 
 # Build Job Study Guide
@@ -11,6 +11,8 @@ Turn a job analysis into a practical study document that helps a learner prepare
 
 Read [study-guide-rubric.md](references/study-guide-rubric.md) when creating a full study document, selecting free resources, building a study plan, or writing questions and answers.
 
+Read [study-content-library.md](references/study-content-library.md) when the user asks for actual study content, cheat sheets, cheatsheets, interview questions, practice answers, or a ready-to-study document rather than only a plan and resource list.
+
 ## Input Handling
 
 1. Identify the input type.
@@ -18,9 +20,11 @@ Read [study-guide-rubric.md](references/study-guide-rubric.md) when creating a f
    - If the user provides a raw job description or URL instead of an analysis, use `$analyze-job-requirement` first when available, or produce a compact role/skills breakdown before building the guide.
    - If the user also provides a resume, background, target timeline, or weak areas, personalize the priority order and practice questions.
 
-2. Confirm the output format only when necessary.
-   - Default to a Markdown study document in the response or saved artifact.
-   - If the user asks for `.docx`, `.pdf`, slides, or spreadsheet tracking, use the appropriate document/spreadsheet/presentation skill when available.
+2. Select the output format from the user's preference.
+   - Produce Markdown when the user asks for Markdown, `.md`, plain text, an in-chat study guide, or does not specify a file format.
+   - Produce DOCX when the user asks for Word, `.docx`, an editable document, or a downloadable study document.
+   - If the user asks for another format, offer Markdown or DOCX unless they explicitly require conversion outside this skill's scope.
+   - If DOCX is requested, use the `documents:documents` skill when available and create an editable `.docx` containing the same sections as the Markdown guide.
 
 ## Workflow
 
@@ -46,9 +50,10 @@ Read [study-guide-rubric.md](references/study-guide-rubric.md) when creating a f
    - Start with the target role and the study goal.
    - Include a topic map linking each job requirement to study topics and resources.
    - Organize sections in prerequisite order, not job-post order.
+   - Include concise study notes and cheat sheets for each major module.
    - Include a weekly or phased plan when the user gives a timeline, or a default 2-4 week plan when useful.
    - Add hands-on exercises that mirror role responsibilities.
-   - Add Q&A for each topic, including conceptual, practical, scenario, and interview-style questions.
+   - Add Q&A for each topic, including conceptual, practical, scenario, behavioral, and interview-style questions with answers.
 
 5. Verify and cite.
    - Cite each resource URL and label it as free, free with account, or partly free.
@@ -58,14 +63,17 @@ Read [study-guide-rubric.md](references/study-guide-rubric.md) when creating a f
 
 ## Study Document Shape
 
+Use either Markdown or DOCX depending on the user's preference. Keep the same content structure in both formats.
+
 For a standard guide, produce:
 
 - Role preparation summary: what the learner is preparing for and the highest-priority gaps.
 - Skills-to-study map: job requirement, study topic, priority, and evidence from the job analysis.
 - Curated free resources: grouped by topic with source links and rationale.
 - Study path: ordered modules with outcomes, readings/videos/labs, and checkpoints.
+- Study notes and cheat sheets: concise explanations, frameworks, formulas, commands, vocabulary, or decision rules that fit the role.
 - Practice tasks: hands-on activities that simulate the role's responsibilities.
-- Questions and answers: topic-by-topic Q&A, including interview and applied scenario questions.
+- Questions and answers: topic-by-topic Q&A, including interview and applied scenario questions with model answers.
 - Review checklist: what the learner should be able to explain, build, analyze, or demonstrate.
 - Next steps: portfolio pieces, resume keywords, interview prep, or deeper learning when relevant.
 
@@ -75,7 +83,8 @@ Before responding:
 
 - Verify that every major study topic maps back to a job requirement, responsibility, qualification, or knowledge gap.
 - Verify that resources are free or clearly labeled with access limitations.
-- Verify that the guide contains both learning content and Q&A, not just links.
-- Verify that questions include answers and cover applied understanding.
+- Verify that the guide contains learning content, cheat sheets, and Q&A, not just links.
+- Verify that questions include answers and cover applied understanding, interview communication, and role scenarios.
 - Verify that citations are present for external resources.
+- Verify that the final output format is Markdown or DOCX, matching the user's preference or the default Markdown behavior.
 - If live search is unavailable, say so and produce a study structure without pretending resources were verified.

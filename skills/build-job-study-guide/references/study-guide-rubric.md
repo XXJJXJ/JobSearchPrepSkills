@@ -48,7 +48,17 @@ Label access:
 
 ## Document Structure
 
-Use this structure by default:
+Use this structure by default for both Markdown and DOCX output. In DOCX, use real document headings, tables, and lists rather than pasting raw Markdown syntax.
+
+## Output Format Rules
+
+- If the user requests Markdown, `.md`, plain text, or an in-chat guide, produce Markdown.
+- If the user requests Word, `.docx`, an editable document, or a downloadable study document, produce DOCX.
+- If the user gives no format preference, default to Markdown.
+- If the user asks for PDF, slides, spreadsheet, HTML, or another format, ask whether Markdown or DOCX is acceptable unless the broader task explicitly requires conversion.
+- Keep content equivalent across Markdown and DOCX: preparation focus, study map, resources, study path, cheat sheets, practice tasks, interview Q&A, checklist, and next steps.
+
+## Markdown Template
 
 ```markdown
 # Study Guide: [Target Role]
@@ -71,22 +81,31 @@ Use this structure by default:
 ### Module 1: [Topic]
 - Why it matters for the job:
 - Learn:
+- Study notes:
+- Cheat sheet:
 - Practice:
 - Checkpoint:
 
-## 5. Practice Tasks
+## 5. Cheat Sheets
+### [Topic]
+- Key ideas:
+- Terms:
+- Process:
+- Common mistakes:
+
+## 6. Practice Tasks
 | Task | Role scenario | Deliverable |
 |---|---|---|
 
-## 6. Questions And Answers
+## 7. Interview Questions And Answers
 ### [Topic]
 Q:
 A:
 
-## 7. Review Checklist
+## 8. Review Checklist
 -
 
-## 8. Next Steps
+## 9. Next Steps
 -
 ```
 
@@ -107,6 +126,19 @@ Write answers that are useful for studying:
 - Add short reasoning or examples.
 - Include common pitfalls when helpful.
 - Tie answers back to job responsibilities or interview expectations.
+
+## Study Notes And Cheat Sheets
+
+Read `study-content-library.md` when the output should include actual study content. Use it as reusable starter material, then adapt it to the job analysis and the free resources found during live search.
+
+Include:
+
+- Short study notes for every topic.
+- Cheat sheets for frameworks, workflows, vocabulary, formulas, commands, or decision rules.
+- Interview question sets with model answers.
+- Role-specific examples, not only generic definitions.
+
+Do not copy the content library blindly. Remove irrelevant sections and rewrite examples so they match the target role.
 
 ## Study Plan Rules
 
