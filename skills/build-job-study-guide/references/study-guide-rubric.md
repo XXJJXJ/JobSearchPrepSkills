@@ -111,7 +111,10 @@ Sources: [Source title](URL)
 - Sources: [Source title](URL)
 
 #### 5.4 Must-Know Details
-- [ ] [Important item to understand or memorize]
+- Detail:
+- Why it matters:
+- Recommended answer or explanation:
+- Sources: [Source title](URL)
 
 #### 5.5 Common Mistakes or Misunderstandings
 | Mistake | Correct understanding | Why it matters |
@@ -119,15 +122,20 @@ Sources: [Source title](URL)
 
 #### 5.6 Practice Questions
 ##### Beginner
--
+Q:
+A: [Recommended answer with brief reasoning, example, or common pitfall.]
 ##### Intermediate
--
+Q:
+A: [Recommended answer with brief reasoning, example, or common pitfall.]
 ##### Advanced
--
+Q:
+A: [Recommended answer with tradeoffs, edge cases, or deeper reasoning.]
 ##### Scenario-Based
--
+Q:
+A: [Recommended answer with first steps, reasoning, and role-specific details.]
 ##### Interview-Style
--
+Q:
+A: [Recommended answer that is concise, truthful, and connected to the target role.]
 
 #### 5.7 Questions and Answers
 Q:
@@ -145,7 +153,17 @@ Back:
 |---|---|---|
 
 ## 7. Review Checklist
--
+### Learning Objectives
+- [Objective the learner should understand or perform]
+
+### Expected Outcomes
+- [Concrete capability, artifact, explanation, or interview answer the learner should be able to produce]
+
+### Concise Notes And Takeaways
+- [Short takeaway that summarizes what to remember and why it matters]
+
+### Self-Check
+- [ ] I can [explain, build, analyse, compare, troubleshoot, or demonstrate the target skill].
 
 ## 8. Next Steps
 -
@@ -167,6 +185,7 @@ Write answers that are useful for studying:
 - Add short reasoning or examples.
 - Include common pitfalls when helpful.
 - Tie answers back to job responsibilities or interview expectations.
+- Put the recommended answer directly with the question when generating the Practice Questions section; do not leave section 5.6 as unanswered prompts.
 - Format every answer as `Q:` and `A:`.
 
 ## Study Notes And Cheat Sheets
@@ -178,6 +197,7 @@ Include:
 - The broader job-study guide scaffold: preparation focus, study map, free resources, study path, practice tasks, review checklist, and next steps.
 - For each major topic, a 9-section study content module with overview, key concepts, organized study notes, must-know details, common mistakes, practice questions, Q&A, flashcards, and final revision summary.
 - Cheat sheet material inside organized study notes or must-know details when useful.
+- Review checklist entries with learning objectives, expected outcomes, concise notes, takeaways, and self-check items.
 - Interview question sets with model answers.
 - Role-specific examples, not only generic definitions.
 

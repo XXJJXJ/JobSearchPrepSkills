@@ -254,6 +254,7 @@ Use these difficulty levels when generating the `Practice Questions` section:
 - Interview-style: "Tell me about a time you used [skill]", "How would you explain [concept] to a non-expert?"
 
 Every question must have a matching `Q:` and `A:` answer. Answers should explain the reasoning, not just state a memorized response.
+Place the recommended answer and supporting detail directly under each practice question, including a concise explanation, example, tradeoff, or pitfall when useful for interview preparation.
 
 ## Flashcard Patterns
 
@@ -280,6 +281,16 @@ Use this shape for the final section:
 - Practice tasks or examples to revisit.
 - Interview points to rehearse.
 - Source links worth reviewing again.
+
+## Review Checklist Pattern
+
+Use the review checklist to combine objectives, outcomes, concise notes, takeaways, and self-check items:
+
+- Learning objective: what the learner should understand or be able to do.
+- Expected outcome: the explanation, artifact, decision, or interview answer the learner can produce.
+- Concise note: the shortest useful reminder of the concept.
+- Takeaway: why the concept matters for the target role.
+- Self-check: an `I can...` statement tied to a job requirement or practice task.
 
 ## Practice Task Starters
 

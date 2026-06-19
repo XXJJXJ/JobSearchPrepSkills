@@ -54,6 +54,7 @@ Read [study-content-library.md](references/study-content-library.md) when the us
    - Start with the target role and the study goal.
    - Keep the broader job-study guide structure: role preparation summary, skills-to-study map, curated free resources, study path, study content modules, practice tasks, review checklist, and next steps.
    - Use the 9-section study-content structure in `study-guide-rubric.md` inside each major study module or topic: Overview, Key Concepts, Organized Study Notes, Must-Know Details, Common Mistakes or Misunderstandings, Practice Questions, Questions and Answers, Flashcards, and Final Revision Summary.
+   - In Must-Know Details and Practice Questions, include recommended answers or explanations with enough detail for the learner to study without guessing the expected response.
    - Highlight the most important topics first.
    - Make explanations beginner-friendly while detailed enough for serious study.
    - Rewrite source material clearly in your own words; do not copy large chunks from links.
@@ -77,9 +78,9 @@ For a standard guide, produce:
 - Skills-to-study map: job requirement, study topic, priority, and evidence from the job analysis.
 - Curated free resources: grouped by topic with source links and rationale.
 - Study path: ordered modules with outcomes, readings/videos/labs, and checkpoints.
-- Study content modules: for each major topic, use the 9-section structure: Overview, Key Concepts, Organized Study Notes, Must-Know Details, Common Mistakes or Misunderstandings, Practice Questions, Questions and Answers, Flashcards, and Final Revision Summary.
+- Study content modules: for each major topic, use the 9-section structure: Overview, Key Concepts, Organized Study Notes, Must-Know Details with recommended explanations, Common Mistakes or Misunderstandings, Practice Questions with recommended answers and details, Questions and Answers, Flashcards, and Final Revision Summary.
 - Practice tasks: hands-on activities that simulate the role's responsibilities.
-- Review checklist: what the learner should be able to explain, build, analyse, or demonstrate.
+- Review checklist: learning objectives, expected outcomes, concise notes and takeaways, and what the learner should be able to explain, build, analyse, or demonstrate.
 - Next steps: portfolio pieces, resume keywords, interview prep, or deeper learning when relevant.
 
 ## Quality Checks
@@ -91,7 +92,9 @@ Before responding:
 - Verify that inaccessible links are mentioned without stopping the whole task.
 - Verify that duplicate information across sources has been removed or merged.
 - Verify that the guide retains the broader job-study scaffold and includes 9-section study content modules with key concepts, organized notes, must-know details, common mistakes, practice questions, Q&A, flashcards, and final revision summaries.
-- Verify that every practice question has a clear answer formatted as `Q:` and `A:`.
+- Verify that Must-Know Details include the detail to remember, why it matters, and a recommended explanation or answer.
+- Verify that every practice question includes a clear recommended answer with supporting detail formatted as `Q:` and `A:`.
+- Verify that the Review Checklist includes learning objectives, expected outcomes, concise notes and takeaways, and practical self-check items.
 - Verify that citations are present for external resources and each major section links back to relevant URLs.
 - Verify that the final output format is Markdown or DOCX, matching the user's preference or the default Markdown behavior.
 - If live search is unavailable, say so and produce a study structure without pretending resources were verified.
