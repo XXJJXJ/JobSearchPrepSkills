@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Job Study Guide"
+  short_description: "Turn job analysis into a free study guide"
+  default_prompt: "Use $build-job-study-guide to turn this job analysis into a study document with free learning resources, questions, and answers."
