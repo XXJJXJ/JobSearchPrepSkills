@@ -243,6 +243,44 @@ Q: How would you decide whether to use a quick fix or a more durable solution?
 
 A: I would compare urgency, risk, user impact, cost of rework, and how likely the issue is to recur. A quick fix can be appropriate for a low-risk urgent problem if it is tracked and followed by a durable fix. For high-impact or repeated problems, I would favor a more durable solution because repeated quick fixes create hidden cost.
 
+## Practice Question Patterns
+
+Use these difficulty levels when generating the `Practice Questions` section:
+
+- Beginner: "What is [term]?", "Why is [concept] important?", "What is the difference between [A] and [B]?"
+- Intermediate: "How would you apply [concept] to [role scenario]?", "What steps would you follow to [task]?"
+- Advanced: "What tradeoffs would you consider when [decision]?", "How would you diagnose [complex problem]?"
+- Scenario-based: "A stakeholder/customer/user reports [situation]. What do you do first, and why?"
+- Interview-style: "Tell me about a time you used [skill]", "How would you explain [concept] to a non-expert?"
+
+Every question must have a matching `Q:` and `A:` answer. Answers should explain the reasoning, not just state a memorized response.
+
+## Flashcard Patterns
+
+Use flashcards for terms, frameworks, formulas, commands, decision rules, and common mistakes.
+
+Examples:
+
+Front: What is the difference between a responsibility and an outcome?
+Back: A responsibility is work performed; an outcome is the result the work should create, such as reduced risk, improved quality, faster delivery, or better customer experience.
+
+Front: What should a strong interview answer include?
+Back: A direct answer, context, specific action, result, and a short connection back to the target role.
+
+Front: How should conflicting source explanations be handled?
+Back: Remove duplicates, combine compatible explanations into one clear version, and mention meaningful differences only when they affect understanding or practice.
+
+## Final Revision Summary Pattern
+
+Use this shape for the final section:
+
+- Most important concepts to remember.
+- Terms or definitions to memorize.
+- Common mistakes to avoid.
+- Practice tasks or examples to revisit.
+- Interview points to rehearse.
+- Source links worth reviewing again.
+
 ## Practice Task Starters
 
 Use these as role-specific assignments:

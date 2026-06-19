@@ -21,6 +21,8 @@ Use priorities:
 
 ## Free Resource Selection
 
+Prioritize free and accessible material from links the user provides. If user-provided links are missing, inaccessible, or incomplete, supplement with current free resources found through live search.
+
 Prefer:
 
 - Official product or platform documentation.
@@ -50,27 +52,29 @@ Label access:
 
 Use this structure by default for both Markdown and DOCX output. In DOCX, use real document headings, tables, and lists rather than pasting raw Markdown syntax.
 
+The 9-section study-content structure complements the broader job-study guide. Do not replace the role preparation, resources, study path, practice tasks, checklist, or next steps with only the 9-section content block.
+
 ## Output Format Rules
 
 - If the user requests Markdown, `.md`, plain text, or an in-chat guide, produce Markdown.
 - If the user requests Word, `.docx`, an editable document, or a downloadable study document, produce DOCX.
 - If the user gives no format preference, default to Markdown.
 - If the user asks for PDF, slides, spreadsheet, HTML, or another format, ask whether Markdown or DOCX is acceptable unless the broader task explicitly requires conversion.
-- Keep content equivalent across Markdown and DOCX: preparation focus, study map, resources, study path, cheat sheets, practice tasks, interview Q&A, checklist, and next steps.
+- Keep content equivalent across Markdown and DOCX: role preparation, study map, resources, study path, 9-section study content modules, practice tasks, checklist, and next steps.
 
 ## Markdown Template
 
 ```markdown
-# Study Guide: [Target Role]
+# Study Guide: [Topic / Job Role / Subject]
 
 ## 1. Preparation Focus
-- Target role:
-- Source job analysis:
-- Highest-priority skills:
+- Target role/topic:
+- Source job analysis or source links:
+- Highest-priority skills or concepts:
 - Suggested timeline:
 
 ## 2. Skills-To-Study Map
-| Priority | Job requirement | Study topic | Outcome |
+| Priority | Job requirement or source topic | Study topic | Outcome |
 |---|---|---|---|
 
 ## 3. Curated Free Resources
@@ -79,33 +83,71 @@ Use this structure by default for both Markdown and DOCX output. In DOCX, use re
 
 ## 4. Study Path
 ### Module 1: [Topic]
-- Why it matters for the job:
+- Why it matters:
 - Learn:
-- Study notes:
-- Cheat sheet:
 - Practice:
 - Checkpoint:
 
-## 5. Cheat Sheets
-### [Topic]
-- Key ideas:
-- Terms:
-- Process:
-- Common mistakes:
+## 5. Study Content Modules
+### Module: [Topic]
 
-## 6. Practice Tasks
-| Task | Role scenario | Deliverable |
+#### 5.1 Overview
+[Summarize what this topic is about and why it is important.]
+
+Sources: [Source title](URL)
+
+#### 5.2 Key Concepts
+##### [Concept]
+- Explanation:
+- Why it matters:
+- Important terms or definitions:
+- Simple example:
+- Sources: [Source title](URL)
+
+#### 5.3 Organized Study Notes
+##### [Logical section]
+- Notes:
+- Examples:
+- Sources: [Source title](URL)
+
+#### 5.4 Must-Know Details
+- [ ] [Important item to understand or memorize]
+
+#### 5.5 Common Mistakes or Misunderstandings
+| Mistake | Correct understanding | Why it matters |
 |---|---|---|
 
-## 7. Interview Questions And Answers
-### [Topic]
+#### 5.6 Practice Questions
+##### Beginner
+-
+##### Intermediate
+-
+##### Advanced
+-
+##### Scenario-Based
+-
+##### Interview-Style
+-
+
+#### 5.7 Questions and Answers
 Q:
 A:
 
-## 8. Review Checklist
+#### 5.8 Flashcards
+Front:
+Back:
+
+#### 5.9 Final Revision Summary
+[Concise summary to review before a test, interview, or practical use.]
+
+## 6. Practice Tasks
+| Task | Role scenario or practical use | Deliverable |
+|---|---|---|
+
+## 7. Review Checklist
 -
 
-## 9. Next Steps
+## 8. Next Steps
 -
 ```
 
@@ -113,12 +155,11 @@ A:
 
 Include a mix of:
 
-- Concept checks: definitions, distinctions, and principles.
-- Applied questions: "How would you..." or "What would you do when..."
-- Scenario questions: realistic problems based on role responsibilities.
-- Tool questions: commands, workflows, dashboards, APIs, or platform behavior when relevant.
-- Behavioral questions: stakeholder management, tradeoffs, prioritization, and communication.
-- Self-assessment questions: identify gaps and explain learning evidence.
+- Beginner questions: definitions, simple recall, and basic distinctions.
+- Intermediate questions: explanation, comparison, and practical application.
+- Advanced questions: tradeoffs, edge cases, synthesis, and deeper reasoning.
+- Scenario-based questions: realistic problems based on role responsibilities or practical use.
+- Interview-style questions when relevant: concise but thoughtful answers that show communication and judgment.
 
 Write answers that are useful for studying:
 
@@ -126,6 +167,7 @@ Write answers that are useful for studying:
 - Add short reasoning or examples.
 - Include common pitfalls when helpful.
 - Tie answers back to job responsibilities or interview expectations.
+- Format every answer as `Q:` and `A:`.
 
 ## Study Notes And Cheat Sheets
 
@@ -133,12 +175,24 @@ Read `study-content-library.md` when the output should include actual study cont
 
 Include:
 
-- Short study notes for every topic.
-- Cheat sheets for frameworks, workflows, vocabulary, formulas, commands, or decision rules.
+- The broader job-study guide scaffold: preparation focus, study map, free resources, study path, practice tasks, review checklist, and next steps.
+- For each major topic, a 9-section study content module with overview, key concepts, organized study notes, must-know details, common mistakes, practice questions, Q&A, flashcards, and final revision summary.
+- Cheat sheet material inside organized study notes or must-know details when useful.
 - Interview question sets with model answers.
 - Role-specific examples, not only generic definitions.
 
 Do not copy the content library blindly. Remove irrelevant sections and rewrite examples so they match the target role.
+
+## Source Synthesis Rules
+
+- Prioritize free and accessible material from links the user provides.
+- If any link cannot be accessed, mention it and continue using remaining accessible links.
+- Remove duplicate information across sources.
+- If sources explain the same concept differently, combine them into one clear explanation.
+- Highlight the most important topics first.
+- Make the document beginner-friendly but detailed enough for serious study.
+- Include source references by linking each major section back to relevant URLs.
+- Avoid copying large chunks directly from sources; paraphrase clearly.
 
 ## Study Plan Rules
 
@@ -156,3 +210,4 @@ Do not copy the content library blindly. Remove irrelevant sections and rewrite 
 - Use current web search for resource freshness.
 - Do not copy long passages from resources.
 - Summarize what each resource covers and how to use it.
+- Link each major generated section to the relevant source URLs.
