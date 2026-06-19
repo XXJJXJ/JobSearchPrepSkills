@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Resume Fit"
+  short_description: "Evaluate and tailor resumes for job roles"
+  default_prompt: "Use $review-resume-fit to compare my resume against this job description and suggest truthful, practical improvements."
