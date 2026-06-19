@@ -102,7 +102,7 @@ Problem-solving flow:
 |---|---|---|
 | "Own" | Prepare for accountability and tradeoff questions | Ownership story and decision framework |
 | "Collaborate cross-functionally" | Learn stakeholder mapping and communication | Stakeholder map and status update examples |
-| "Analyze" | Learn data, evidence, and interpretation | Worked analysis example with conclusion |
+| "analyse" | Learn data, evidence, and interpretation | Worked analysis example with conclusion |
 | "Build" or "implement" | Learn hands-on workflow | Small project or demo artifact |
 | "Improve" or "optimize" | Learn baseline, metric, intervention, result | Before/after case study |
 | "Ensure compliance" | Learn rules, controls, auditability, and risk | Control checklist and risk scenario answers |

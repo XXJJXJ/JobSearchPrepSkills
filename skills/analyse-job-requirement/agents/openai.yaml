@@ -1,0 +1,4 @@
+interface:
+  display_name: "analyse Job Requirement"
+  short_description: "analyse job posts into structured requirements"
+  default_prompt: "Use $analyse-job-requirement to analyse this job description and summarize the role, responsibilities, qualifications, and required knowledge."

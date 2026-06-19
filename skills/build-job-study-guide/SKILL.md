@@ -7,7 +7,7 @@ description: Build a Markdown or DOCX study document from a job analysis, job re
 
 ## Overview
 
-Turn a job analysis into a practical study document that helps a learner prepare for the role. Start from the generated job analysis when available; otherwise analyze the job description first or ask for the missing job analysis.
+Turn a job analysis into a practical study document that helps a learner prepare for the role. Start from the generated job analysis when available; otherwise analyse the job description first or ask for the missing job analysis.
 
 Read [study-guide-rubric.md](references/study-guide-rubric.md) when creating a full study document, selecting free resources, building a study plan, or writing questions and answers.
 
@@ -17,7 +17,7 @@ Read [study-content-library.md](references/study-content-library.md) when the us
 
 1. Identify the input type.
    - If the user provides a job analysis, use its responsibilities, qualifications, knowledge map, seniority signals, and candidate preparation notes as the study blueprint.
-   - If the user provides a raw job description or URL instead of an analysis, use `$analyze-job-requirement` first when available, or produce a compact role/skills breakdown before building the guide.
+   - If the user provides a raw job description or URL instead of an analysis, use `$analyse-job-requirement` first when available, or produce a compact role/skills breakdown before building the guide.
    - If the user also provides a resume, background, target timeline, or weak areas, personalize the priority order and practice questions.
 
 2. Select the output format from the user's preference.
@@ -79,7 +79,7 @@ For a standard guide, produce:
 - Study path: ordered modules with outcomes, readings/videos/labs, and checkpoints.
 - Study content modules: for each major topic, use the 9-section structure: Overview, Key Concepts, Organized Study Notes, Must-Know Details, Common Mistakes or Misunderstandings, Practice Questions, Questions and Answers, Flashcards, and Final Revision Summary.
 - Practice tasks: hands-on activities that simulate the role's responsibilities.
-- Review checklist: what the learner should be able to explain, build, analyze, or demonstrate.
+- Review checklist: what the learner should be able to explain, build, analyse, or demonstrate.
 - Next steps: portfolio pieces, resume keywords, interview prep, or deeper learning when relevant.
 
 ## Quality Checks

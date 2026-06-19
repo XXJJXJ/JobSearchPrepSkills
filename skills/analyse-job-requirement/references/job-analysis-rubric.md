@@ -1,6 +1,6 @@
 # Job Analysis Rubric
 
-Use this rubric to analyze job descriptions without turning them into generic summaries.
+Use this rubric to analyse job descriptions without turning them into generic summaries.
 
 ## Source Assessment
 

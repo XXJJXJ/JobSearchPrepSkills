@@ -1,13 +1,13 @@
 ---
-name: analyze-job-requirement
-description: Analyze job requirements and job descriptions from pasted text, files, or URLs. Use when Codex needs to extract and explain a role's purpose, responsibilities, required and preferred qualifications, skills, domain knowledge, tools, seniority level, hiring priorities, candidate-fit signals, or gaps from a job posting or role description.
+name: analyse-job-requirement
+description: analyse job requirements and job descriptions from pasted text, files, or URLs. Use when Codex needs to extract and explain a role's purpose, responsibilities, required and preferred qualifications, skills, domain knowledge, tools, seniority level, hiring priorities, candidate-fit signals, or gaps from a job posting or role description.
 ---
 
-# Analyze Job Requirement
+# analyse Job Requirement
 
 ## Overview
 
-Analyze a job posting into a structured, evidence-aware brief that separates what the posting explicitly says from reasonable inferences. Support both pasted job text and URLs supplied by the user.
+analyse a job posting into a structured, evidence-aware brief that separates what the posting explicitly says from reasonable inferences. Support both pasted job text and URLs supplied by the user.
 
 Read [job-analysis-rubric.md](references/job-analysis-rubric.md) when producing a full analysis, comparing a candidate profile against a role, or when the user asks for a structured output.
 
