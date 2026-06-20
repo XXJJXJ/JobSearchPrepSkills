@@ -53,6 +53,28 @@ After creating and freezing:
 
 the coordinator must stop doing topic authoring directly and explicitly spawn parallel subagents.
 
+### Subagent Batching, Approval, and Effort Defaults
+
+Subagent execution must be approval-gated and batched.
+
+* The maximum number of simultaneously active topic-writing subagents is **3**.
+* If the Codex runtime has its own lower concurrency limit, use the lower limit.
+* Never spawn more than 3 topic-writing subagents in one batch, even if more manifest rows remain.
+* After each batch finishes, the coordinator must summarize:
+
+  * completed output paths,
+  * failed or incomplete output paths,
+  * any missing prerequisite requests,
+  * unresolved ambiguities,
+  * remaining topic documents not yet spawned.
+* Before spawning the next batch, the coordinator must ask the user for approval.
+* The coordinator must not spawn the next batch until the user explicitly approves.
+* If user approval is unavailable in the current run, stop after the completed batch and report that remaining topic documents are pending approval.
+* Subagents must use **High** reasoning/effort by default.
+* Use a different subagent effort level only when the user explicitly specifies one for this run.
+* If the runtime does not expose an effort setting for subagents, include `Effort: High` in the subagent task packet and state in the final response that the requested effort level was expressed as an instruction rather than a runtime parameter.
+
+
 Use this exact orchestration rule:
 
 1. Create `topic-manifest.csv` with one row per planned topic document.
@@ -66,8 +88,20 @@ Use this exact orchestration rule:
    * `canonical_prerequisite_filenames`
    * `allowed_references`
    * `handoff_schema`
-3. Spawn one subagent per row, up to the configured concurrency limit.
-4. Wait for all spawned subagents to finish before integration.
+3. Spawn topic-writing subagents in approval-gated batches:
+   * Select the next unstarted rows from `topic-manifest.csv` in dependency/roadmap order.
+   * Spawn at most 3 subagents in the batch.
+   * Each subagent receives exactly one manifest row.
+   * Each subagent must use `High` effort by default unless the user explicitly specified a different effort level.
+   * Do not spawn subagents for later rows until the current batch has completed and the user has approved the next batch.
+
+4. Wait for all subagents in the current batch to finish before integration for that batch. After the batch finishes:
+   * collect and review every handoff,
+   * check that each subagent wrote only its assigned `output_path`,
+   * summarize batch results for the user,
+   * list the next pending batch of up to 3 topic documents,
+   * ask the user whether to approve spawning the next batch.
+  4a. If the user approves the next batch, repeat step 3 for the next unstarted manifest rows. If the user does not approve, pause topic authoring and report the remaining pending files.
 5. The coordinator may write only the `00-` documents, manifest, integration edits, validation fixes, and final response.
 6. A topic-writing subagent may write only its assigned `output_path`.
 7. If Codex cannot spawn subagents, the coordinator must state this explicitly in the final response: “Subagents were not available in this run, so I executed the topic-writing phase sequentially.”
