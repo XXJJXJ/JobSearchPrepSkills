@@ -40,6 +40,75 @@ Every topic document must be independently readable. A role lesson may point to 
 
 For an in-chat request, present the roadmap and coverage map first, then documents in dependency order. Continue in labelled parts if needed; do not reduce the explanation to fit one message.
 
+## Mandatory Subagent Execution
+
+For this skill, topic writing must use subagents whenever the Codex runtime supports subagents.
+
+After creating and freezing:
+
+* `00-study-roadmap.md`
+* `00-requirement-coverage-map.md`
+* the Canonical Prerequisite Registry
+* the final filename/lesson manifest
+
+the coordinator must stop doing topic authoring directly and explicitly spawn parallel subagents.
+
+Use this exact orchestration rule:
+
+1. Create `topic-manifest.csv` with one row per planned topic document.
+2. Each row must include:
+
+   * `output_path`
+   * `lesson_type` = `foundation` or `role`
+   * `lesson_title`
+   * `covered_requirement_or_prerequisite`
+   * `job_evidence`
+   * `canonical_prerequisite_filenames`
+   * `allowed_references`
+   * `handoff_schema`
+3. Spawn one subagent per row, up to the configured concurrency limit.
+4. Wait for all spawned subagents to finish before integration.
+5. The coordinator may write only the `00-` documents, manifest, integration edits, validation fixes, and final response.
+6. A topic-writing subagent may write only its assigned `output_path`.
+7. If Codex cannot spawn subagents, the coordinator must state this explicitly in the final response: “Subagents were not available in this run, so I executed the topic-writing phase sequentially.”
+8. Do not silently fall back to sequential topic writing.
+
+Each subagent must receive this task packet:
+
+You are a topic author for the `$build-job-study-guide` skill. Write exactly one independently readable lesson.
+
+Assigned output path: `{output_path}`
+Lesson type: `{lesson_type}`
+Lesson title: `{lesson_title}`
+Covered requirement or prerequisite: `{covered_requirement_or_prerequisite}`
+Job evidence: `{job_evidence}`
+Canonical prerequisite filenames: `{canonical_prerequisite_filenames}`
+Allowed references: `{allowed_references}`
+
+Rules:
+
+* Write only the assigned output file.
+* Do not edit `00-study-roadmap.md`, `00-requirement-coverage-map.md`, the manifest, or another lesson.
+* Do not create new prerequisite lessons.
+* If a missing prerequisite is discovered, report it in the handoff instead of creating a new file.
+* Follow `references/study-guide-rubric.md`, `references/study-content-library.md`, and `references/lesson-depth-quality-gates.md`.
+* Include two fully solved worked paths: one guided baseline and one failure, edge-case, or trade-off path.
+* Include complete practice, assessment, model solution, scoring, and remediation.
+
+Return this handoff:
+
+```json
+{
+  "output_path": "",
+  "covered_item": "",
+  "prerequisite_lessons_referenced": [],
+  "references_used": [],
+  "new_prerequisite_requested": null,
+  "unresolved_ambiguity": null,
+  "quality_gate_notes": ""
+}
+```
+
 ## Workflow
 
 1. **Map requirements and dependencies.** List job evidence, competency, canonical prerequisite concepts, one planned foundation lesson per unique prerequisite, planned role lesson, practical proof, and likely assessment. Do not write the roadmap until every requirement has a destination and every prerequisite has one owner.
@@ -50,17 +119,6 @@ For an in-chat request, present the roadmap and coverage map first, then documen
 6. **Add role-relevant assessment preparation.** Match coding, data, system-design, writing, role-play, or operational exercises to the job evidence. Give the learner all starting data, constraints, steps, verification criteria, completed solution, scoring, and remediation needed to practise independently.
 7. **Offer optional consolidation after lesson completion.** After all foundation and role lesson documents are finished and integrated, ask the user whether they want a consolidated Markdown or DOCX document with topics ordered by the roadmap/dependency sequence. If the user confirms a format, create that consolidated document while preserving the separate lesson files and the established topic order.
 8. **Validate before delivery.** Apply every gate in `lesson-depth-quality-gates.md`. For Markdown guides, run `sh scripts/validate-study-guide.sh <guide-directory>`. Fix all failures before presenting the guide.
-
-## Parallel Topic Production
-
-After the coordinator freezes the shared inputs, spawn subagents to prepare independent foundation and role-topic documents in parallel. Do not parallelise the dependency map, prerequisite registry, roadmap, coverage map, numbering, or final integration.
-
-1. Assign at most one subagent to each unique foundation lesson and at most one subagent to each role lesson. Queue remaining lessons when concurrency is limited.
-2. Give every subagent the same frozen task packet: target role and job evidence, learner assumption, lesson contract, assigned requirement or foundation concept, canonical prerequisite filenames, source/research constraints, exact output filename, and the instruction not to edit shared `00-` documents or another agent’s file.
-3. Give each subagent an isolated output path. A subagent may write only its assigned topic file and may read the frozen registry and other completed foundations. It must not create an alternative prerequisite lesson, renumber documents, or alter the coverage map.
-4. Require each subagent to return a concise handoff: output path, requirement/foundation covered, prerequisite lessons referenced, optional references used, and any unresolved ambiguity. Do not accept a topic that reports a new prerequisite without routing it to the coordinator.
-5. The coordinator resolves new prerequisites by updating the registry once, assigning one foundation owner, and updating all dependent topics before they are finalised. Do not duplicate a foundation to avoid waiting; queue dependent role lessons or let them include only a short, explicit recap until the shared foundation exists.
-6. After all topic authors finish, the coordinator checks document names, one-to-one requirement coverage, prerequisite reuse, cross-links, and full lesson quality. Resolve conflicts centrally, then run the guide validator and depth gates. When subagents are unavailable, execute the same phases sequentially.
 
 ## Non-Negotiable Teaching Rules
 
