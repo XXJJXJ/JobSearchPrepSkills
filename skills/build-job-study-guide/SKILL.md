@@ -1,100 +1,63 @@
 ---
 name: build-job-study-guide
-description: Build a Markdown or DOCX study document from a job analysis, job requirement breakdown, or job description. Use when Codex needs to identify skill gaps, search for current free learning materials, curate reputable free resources, organize a role-specific study guide, and create key concepts, study notes, practice questions, answers, flashcards, and revision summaries.
+description: Build self-contained job-preparation lessons from a job analysis, job description, or role requirements. Use when Codex needs to teach required and preferred skills from beginner through advanced level, create realistic practice and assessment preparation, or produce Markdown or DOCX study materials that do not require learners to follow external links for essential content.
 ---
 
 # Build Job Study Guide
 
-## Overview
+Create a content-first job preparation curriculum. Teach the material in the guide; use external sources to verify freshness and provide optional further practice, not as a substitute for explanation.
 
-Turn a job analysis into a practical study document that helps a learner prepare for the role. Start from the generated job analysis when available; otherwise analyse the job description first or ask for the missing job analysis.
-
-Read [study-guide-rubric.md](references/study-guide-rubric.md) when creating a full study document, selecting free resources, building a study plan, or writing questions and answers.
-
-Read [study-content-library.md](references/study-content-library.md) when the user asks for actual study content, cheat sheets, cheatsheets, interview questions, practice answers, or a ready-to-study document rather than only a plan and resource list.
+Read [study-guide-rubric.md](references/study-guide-rubric.md) for every guide. Read [study-content-library.md](references/study-content-library.md) when writing lesson explanations, examples, exercises, assessments, or retention material.
 
 ## Input Handling
 
-1. Identify the input type.
-   - If the user provides a job analysis, use its responsibilities, qualifications, knowledge map, seniority signals, and candidate preparation notes as the study blueprint.
-   - If the user provides a raw job description or URL instead of an analysis, use `$analyse-job-requirement` first when available, or produce a compact role/skills breakdown before building the guide.
-   - If the user also provides a resume, background, target timeline, or weak areas, personalize the priority order and practice questions.
+1. Start from a job analysis when available. If the user supplies only a job description or URL, use `$analyse-job-requirement` first when available; otherwise create a compact requirement breakdown.
+2. Treat every explicit required and preferred qualification, responsibility, tool, methodology, domain concept, and behavioral competency as a study requirement. Split compound requirements into separate learnable competencies and maintain a one-to-one requirement-to-document coverage map.
+3. Use a resume, background, timeline, current level, weak areas, or known hiring stages when supplied. These inputs personalize sequencing and evidence prompts but are never required to produce the teaching material.
+4. When personal background is absent, provide structured evidence prompts and bracketed placeholders. Never invent projects, achievements, or interview stories.
 
-2. Select the output format from the user's preference.
-   - Produce Markdown when the user asks for Markdown, `.md`, plain text, an in-chat study guide, or does not specify a file format.
-   - Produce DOCX when the user asks for Word, `.docx`, an editable document, or a downloadable study document.
-   - If the user asks for another format, offer Markdown or DOCX unless they explicitly require conversion outside this skill's scope.
-   - If DOCX is requested, use the `documents:documents` skill when available and create an editable `.docx` containing the same sections as the Markdown guide.
+## Output Contract
+
+Produce a complete guide set, not a resource list.
+
+- For Markdown, produce `00-study-roadmap.md` plus one numbered topic file for every required and preferred requirement, for example `01-sql.md`.
+- For DOCX, create an equivalent roadmap and individual numbered topic documents. Use `documents:documents` when available.
+- Each topic document must be understandable without opening an external link. A learner may use the optional references to verify, update, or deepen their knowledge, but must not need them to learn a major concept or complete an exercise.
+- For an in-chat request, present the roadmap first, then each standalone topic document in dependency order. If the material exceeds one response, continue in labeled topic-document parts; do not replace the lessons with summaries or links.
 
 ## Workflow
 
-1. Extract study targets from the job analysis.
-   - Convert role responsibilities into work scenarios the learner must understand.
-   - Convert required and preferred qualifications into knowledge topics, tool topics, and behavioral competencies.
-   - Separate must-learn topics from optional differentiators.
-   - Note any prerequisites that must be learned first.
+1. Build the roadmap.
+   - Order requirements by prerequisite and role importance.
+   - State the expected outcome and evidence of competence for each topic document.
+   - Make assumptions about unspecified assessment formats explicit.
 
-2. Gather and verify source material.
-   - Prioritize free and accessible material from links provided by the user.
-   - If the user provides no links or the links do not cover enough material, use live web search for current free resources because courses, documentation, and public learning material change.
-   - Prefer official documentation, university/open courseware, reputable nonprofit education, vendor free tiers, standards bodies, public books, maintained tutorials, and high-quality public videos.
-   - Avoid paywalled content, low-quality SEO pages, outdated tutorials, unmaintained repositories, and resources that require a paid trial unless clearly labeled optional.
-   - Capture title, provider, URL, format, cost/free status, topic coverage, estimated depth, and why it fits the job requirement.
-   - If any user-provided link cannot be accessed, mention it and continue with the remaining accessible links and sources.
+2. Research to support teaching.
+   - Prioritize user-provided material, official documentation, standards bodies, universities, and reputable primary sources.
+   - Verify time-sensitive facts, tool versions, and resource access when live search is available.
+   - Synthesize sources into original, role-specific explanations. Do not copy long passages or make the learner read sources to fill an explanatory gap.
 
-3. Curate rather than dump links.
-   - Choose a small set of strong resources per topic.
-   - Prioritize resources that directly map to must-have job requirements.
-   - Include alternatives only when they serve different learning styles, such as documentation, video, hands-on lab, or practice problems.
-   - Mark beginner, intermediate, and advanced resources when relevant.
-   - Remove duplicate information across sources.
-   - When sources explain the same concept differently, combine them into one clear explanation and note the supporting URLs.
+3. Write every topic document using the complete lesson contract in `study-guide-rubric.md`.
+   - Teach Beginner Foundations, Intermediate Application, and Advanced Judgment in that order.
+   - Include worked examples, guided practice, completed solutions or evaluation criteria, role scenarios, a practical deliverable, and retention material.
+   - Define terminology before relying on it and explain the reasoning behind recommended actions.
 
-4. Build the study document.
-   - Start with the target role and the study goal.
-   - Keep the broader job-study guide structure: role preparation summary, skills-to-study map, curated free resources, study path, study content modules, practice tasks, review checklist, and next steps.
-   - Use the 9-section study-content structure in `study-guide-rubric.md` inside each major study module or topic: Overview, Key Concepts, Organized Study Notes, Must-Know Details, Common Mistakes or Misunderstandings, Practice Questions, Questions and Answers, Flashcards, and Final Revision Summary.
-   - In Must-Know Details and Practice Questions, include recommended answers or explanations with enough detail for the learner to study without guessing the expected response.
-   - Highlight the most important topics first.
-   - Make explanations beginner-friendly while detailed enough for serious study.
-   - Rewrite source material clearly in your own words; do not copy large chunks from links.
-   - Include source references by linking each major section back to relevant URLs.
-   - Include practice questions across beginner, intermediate, advanced, scenario-based, and interview-style levels when relevant.
-   - Include answers for every practice question and flashcards for memorization.
+4. Add relevant assessment preparation.
+   - Select formats that match the role or employer evidence: technical task, coding exercise, SQL/data analysis, case study, system design, writing sample, role-play, or practical work sample.
+   - Include a timed assessment, model answer or completed example solution, scoring rubric, remediation guidance, interview questions, and a truthful evidence prompt.
+   - Do not include irrelevant assessment types or assist with active, prohibited, or live assessments.
 
-5. Verify and cite.
-   - Cite each resource URL and label it as free, free with account, or partly free.
-   - Mention the access date when resources are likely to change.
-   - Distinguish source-backed facts from your study recommendations.
-   - If a resource cannot be verified as free, do not present it as free.
-
-## Study Document Shape
-
-Use either Markdown or DOCX depending on the user's preference. Keep the same content structure in both formats.
-
-For a standard guide, produce:
-
-- Role preparation summary: what the learner is preparing for and the highest-priority gaps.
-- Skills-to-study map: job requirement, study topic, priority, and evidence from the job analysis.
-- Curated free resources: grouped by topic with source links and rationale.
-- Study path: ordered modules with outcomes, readings/videos/labs, and checkpoints.
-- Study content modules: for each major topic, use the 9-section structure: Overview, Key Concepts, Organized Study Notes, Must-Know Details with recommended explanations, Common Mistakes or Misunderstandings, Practice Questions with recommended answers and details, Questions and Answers, Flashcards, and Final Revision Summary.
-- Practice tasks: hands-on activities that simulate the role's responsibilities.
-- Review checklist: learning objectives, expected outcomes, concise notes and takeaways, and what the learner should be able to explain, build, analyse, or demonstrate.
-- Next steps: portfolio pieces, resume keywords, interview prep, or deeper learning when relevant.
+5. Finish with optional references.
+   - Put citations, provider, URL, access level, access date when relevant, and a short purpose note in `References And Further Practice` at the end of each topic document.
+   - Label external resources as optional and distinguish source-backed facts from study recommendations.
 
 ## Quality Checks
 
-Before responding:
+Before responding, verify that:
 
-- Verify that every major study topic maps back to a job requirement, responsibility, qualification, or knowledge gap.
-- Verify that resources are free or clearly labeled with access limitations, and that user-provided links are prioritized when available.
-- Verify that inaccessible links are mentioned without stopping the whole task.
-- Verify that duplicate information across sources has been removed or merged.
-- Verify that the guide retains the broader job-study scaffold and includes 9-section study content modules with key concepts, organized notes, must-know details, common mistakes, practice questions, Q&A, flashcards, and final revision summaries.
-- Verify that Must-Know Details include the detail to remember, why it matters, and a recommended explanation or answer.
-- Verify that every practice question includes a clear recommended answer with supporting detail formatted as `Q:` and `A:`.
-- Verify that the Review Checklist includes learning objectives, expected outcomes, concise notes and takeaways, and practical self-check items.
-- Verify that citations are present for external resources and each major section links back to relevant URLs.
-- Verify that the final output format is Markdown or DOCX, matching the user's preference or the default Markdown behavior.
-- If live search is unavailable, say so and produce a study structure without pretending resources were verified.
+- The roadmap and a full topic document exist for every required and preferred requirement.
+- Every topic document contains all three learning levels, role-specific explanations, worked examples, practice, answer keys or rubrics, assessment rehearsal, retention material, and exit criteria.
+- No major concept, required procedure, or exercise answer is delegated to an external link.
+- The assessment format is relevant to the role and every timed task has a model solution and scoring criteria.
+- All citations are optional further-practice material, accurate to the best available source evidence, and clearly labeled for access limitations.
+- Personal evidence remains truthful and uses prompts or placeholders when the user did not supply background.

@@ -1,233 +1,154 @@
-# Study Guide Rubric
+# Content-First Study Guide Rubric
 
-Use this rubric to turn a job analysis into a useful study document.
+Use this rubric for every `$build-job-study-guide` output. The guide must teach the role requirements directly; external resources may deepen or verify learning but must never carry essential instruction.
 
-## Study Target Extraction
+## 1. Guide Set
 
-Derive study targets from:
+### 1.1 Study Roadmap
 
-- Required qualifications: convert into must-learn topics.
-- Preferred qualifications: convert into differentiators.
-- Responsibilities: convert into role scenarios and hands-on practice tasks.
-- Knowledge and skills map: convert into modules and checkpoints.
-- Seniority and scope: adjust depth, autonomy, and scenario complexity.
-- Candidate gaps: prioritize weak areas and add prerequisite material.
+Create `00-study-roadmap.md` or its DOCX equivalent. Include:
 
-Use priorities:
+- Target role, source job analysis, and stated assumptions.
+- A short readiness summary: the outcomes, responsibilities, and assessment expectations being prepared for.
+- A dependency-ordered table with topic document number, job evidence, prerequisite, expected outcome, practical proof, and likely assessment format.
+- An explicit note when an assessment type is inferred rather than stated in the job material.
+- A sequence that starts with foundational concepts and ends with role simulation and interview rehearsal.
 
-- P0: Required for screening or core role execution.
-- P1: Important for interviews and early job performance.
-- P2: Differentiator or later-depth topic.
+### 1.2 Topic Documents
 
-## Free Resource Selection
+Create one numbered standalone document for every required and preferred requirement. Split a compound job statement into separate learnable competencies; do not merge requirements merely because they use related tools or workflows.
 
-Prioritize free and accessible material from links the user provides. If user-provided links are missing, inaccessible, or incomplete, supplement with current free resources found through live search.
+Each document must define unfamiliar terms and teach every prerequisite idea needed to follow its examples. It may reference an earlier topic document for extended practice, but it must include enough explanation to be understood without an external link.
 
-Prefer:
-
-- Official product or platform documentation.
-- Free vendor learning paths or labs.
-- University courses, open courseware, public lectures, or public textbooks.
-- Reputable nonprofit learning sites.
-- Maintained open-source project docs and tutorials.
-- Standards bodies, government, or regulatory sources for compliance-heavy roles.
-- Public videos only when the creator/provider is credible and the content is current enough.
-
-Avoid:
-
-- Paywalled courses or books unless the user explicitly allows paid options.
-- Sites where most useful content is locked behind a subscription.
-- Content farms, thin SEO pages, unverified blogs, and AI-generated article farms.
-- Outdated tutorials for fast-moving tools unless historical context is useful.
-- Resource lists without enough substance to teach the topic.
-
-Label access:
-
-- Free: usable without payment.
-- Free account: free but requires sign-up.
-- Partly free: useful free sections exist, but some material is paid.
-- Unverified: do not use as a primary recommendation.
-
-## Document Structure
-
-Use this structure by default for both Markdown and DOCX output. In DOCX, use real document headings, tables, and lists rather than pasting raw Markdown syntax.
-
-The 9-section study-content structure complements the broader job-study guide. Do not replace the role preparation, resources, study path, practice tasks, checklist, or next steps with only the 9-section content block.
-
-## Output Format Rules
-
-- If the user requests Markdown, `.md`, plain text, or an in-chat guide, produce Markdown.
-- If the user requests Word, `.docx`, an editable document, or a downloadable study document, produce DOCX.
-- If the user gives no format preference, default to Markdown.
-- If the user asks for PDF, slides, spreadsheet, HTML, or another format, ask whether Markdown or DOCX is acceptable unless the broader task explicitly requires conversion.
-- Keep content equivalent across Markdown and DOCX: role preparation, study map, resources, study path, 9-section study content modules, practice tasks, checklist, and next steps.
-
-## Markdown Template
+Use this document shape.
 
 ```markdown
-# Study Guide: [Topic / Job Role / Subject]
+# [Topic] for [Target Role]
 
-## 1. Preparation Focus
-- Target role/topic:
-- Source job analysis or source links:
-- Highest-priority skills or concepts:
-- Suggested timeline:
+## Role Relevance And Outcomes
+- Job requirement and responsibility evidence:
+- What the learner will be able to explain, do, and demonstrate:
+- Prerequisites and minimum definitions:
 
-## 2. Skills-To-Study Map
-| Priority | Job requirement or source topic | Study topic | Outcome |
+## Beginner Foundations
+### Plain-Language Explanation
+### Glossary
+### Core Concepts And How They Connect
+### Worked Example
+### Beginner Check With Answer Key
+
+## Intermediate Application
+### Role Workflow
+### Guided Role Scenario
+### Practice Task
+### Model Answer or Completed Example Solution
+### Troubleshooting And Common Failure Modes
+
+## Advanced Judgment
+### Trade-offs, Constraints, And Edge Cases
+### Quality, Scale, Risk, Or Compliance Considerations
+### Advanced Role Case And Recommended Reasoning
+
+## Practical Deliverable
+- Instructions:
+- Expected artifact:
+- Quality criteria:
+
+## Timed Assessment
+- Assessment format and why it is relevant:
+- Instructions and time limit:
+- Questions or scenario:
+- Model answer or completed example solution:
+- Scoring rubric:
+- Result bands and remediation:
+
+## Interview And Evidence Preparation
+### Technical Or Role Question With Model Answer
+### Truthful evidence prompt
+
+## Retention And Exit Criteria
+### Common Misconceptions
+### Flashcards
+### Final Revision Summary
+### I can... Exit Criteria
+
+## References And Further Practice
+| Provider | Resource | Access | Why it is optional |
 |---|---|---|---|
-
-## 3. Curated Free Resources
-| Topic | Resource | Provider | Access | Why use it |
-|---|---|---|---|---|
-
-## 4. Study Path
-### Module 1: [Topic]
-- Why it matters:
-- Learn:
-- Practice:
-- Checkpoint:
-
-## 5. Study Content Modules
-### Module: [Topic]
-
-#### 5.1 Overview
-[Summarize what this topic is about and why it is important.]
-
-Sources: [Source title](URL)
-
-#### 5.2 Key Concepts
-##### [Concept]
-- Explanation:
-- Why it matters:
-- Important terms or definitions:
-- Simple example:
-- Sources: [Source title](URL)
-
-#### 5.3 Organized Study Notes
-##### [Logical section]
-- Notes:
-- Examples:
-- Sources: [Source title](URL)
-
-#### 5.4 Must-Know Details
-- Detail:
-- Why it matters:
-- Recommended answer or explanation:
-- Sources: [Source title](URL)
-
-#### 5.5 Common Mistakes or Misunderstandings
-| Mistake | Correct understanding | Why it matters |
-|---|---|---|
-
-#### 5.6 Practice Questions
-##### Beginner
-Q:
-A: [Recommended answer with brief reasoning, example, or common pitfall.]
-##### Intermediate
-Q:
-A: [Recommended answer with brief reasoning, example, or common pitfall.]
-##### Advanced
-Q:
-A: [Recommended answer with tradeoffs, edge cases, or deeper reasoning.]
-##### Scenario-Based
-Q:
-A: [Recommended answer with first steps, reasoning, and role-specific details.]
-##### Interview-Style
-Q:
-A: [Recommended answer that is concise, truthful, and connected to the target role.]
-
-#### 5.7 Questions and Answers
-Q:
-A:
-
-#### 5.8 Flashcards
-Front:
-Back:
-
-#### 5.9 Final Revision Summary
-[Concise summary to review before a test, interview, or practical use.]
-
-## 6. Practice Tasks
-| Task | Role scenario or practical use | Deliverable |
-|---|---|---|
-
-## 7. Review Checklist
-### Learning Objectives
-- [Objective the learner should understand or perform]
-
-### Expected Outcomes
-- [Concrete capability, artifact, explanation, or interview answer the learner should be able to produce]
-
-### Concise Notes And Takeaways
-- [Short takeaway that summarizes what to remember and why it matters]
-
-### Self-Check
-- [ ] I can [explain, build, analyse, compare, troubleshoot, or demonstrate the target skill].
-
-## 8. Next Steps
--
 ```
 
-## Question And Answer Design
+## 2. Lesson Quality Rules
 
-Include a mix of:
+### Beginner Foundations
 
-- Beginner questions: definitions, simple recall, and basic distinctions.
-- Intermediate questions: explanation, comparison, and practical application.
-- Advanced questions: tradeoffs, edge cases, synthesis, and deeper reasoning.
-- Scenario-based questions: realistic problems based on role responsibilities or practical use.
-- Interview-style questions when relevant: concise but thoughtful answers that show communication and judgment.
+- Explain the topic in plain language before using specialist terms.
+- Define each abbreviation, concept, input, output, and decision rule that matters to the role.
+- Use a small worked example with inputs, steps, result, and an explanation of why the result is correct.
+- Include answer-keyed checks that test understanding rather than recall alone.
 
-Write answers that are useful for studying:
+### Intermediate Application
 
-- Give direct answers first.
-- Add short reasoning or examples.
-- Include common pitfalls when helpful.
-- Tie answers back to job responsibilities or interview expectations.
-- Put the recommended answer directly with the question when generating the Practice Questions section; do not leave section 5.6 as unanswered prompts.
-- Format every answer as `Q:` and `A:`.
+- Convert theory into a repeatable workflow the learner can use in the target role.
+- Include a realistic scenario, constraints, and a guided task with enough detail to begin without another tutorial.
+- Show a completed solution or give specific, observable evaluation criteria when several solutions are valid.
+- Explain common mistakes, how to detect them, and how to correct them.
 
-## Study Notes And Cheat Sheets
+### Advanced Judgment
 
-Read `study-content-library.md` when the output should include actual study content. Use it as reusable starter material, then adapt it to the job analysis and the free resources found during live search.
+- Explain relevant trade-offs, alternatives, failure modes, and the reasons a choice changes with context.
+- Cover the scale, performance, reliability, security, cost, quality, regulatory, or stakeholder concerns that apply to the subject.
+- Use a role-relevant case that requires prioritization or judgment, then show the recommended reasoning—not only the conclusion.
+- Increase emphasis on ownership, ambiguity, communication, and decision-making for senior roles.
 
-Include:
+### Practical Deliverable And Retention
 
-- The broader job-study guide scaffold: preparation focus, study map, free resources, study path, practice tasks, review checklist, and next steps.
-- For each major topic, a 9-section study content module with overview, key concepts, organized study notes, must-know details, common mistakes, practice questions, Q&A, flashcards, and final revision summary.
-- Cheat sheet material inside organized study notes or must-know details when useful.
-- Review checklist entries with learning objectives, expected outcomes, concise notes, takeaways, and self-check items.
-- Interview question sets with model answers.
-- Role-specific examples, not only generic definitions.
+- Define a practical artifact that demonstrates the competency: analysis, implementation, briefing, workflow, design, checklist, or role-play output.
+- State the quality bar and how the learner can review their own work.
+- Include misconceptions, flashcards, a concise revision summary, and observable `I can...` exit criteria.
 
-Do not copy the content library blindly. Remove irrelevant sections and rewrite examples so they match the target role.
+## 3. Assessment Selection And Design
 
-## Source Synthesis Rules
+Select only assessment types supported by the job requirements or reasonably implied by the role. Label inferred formats clearly.
 
-- Prioritize free and accessible material from links the user provides.
-- If any link cannot be accessed, mention it and continue using remaining accessible links.
-- Remove duplicate information across sources.
-- If sources explain the same concept differently, combine them into one clear explanation.
-- Highlight the most important topics first.
-- Make the document beginner-friendly but detailed enough for serious study.
-- Include source references by linking each major section back to relevant URLs.
-- Avoid copying large chunks directly from sources; paraphrase clearly.
+| Role signal | Appropriate preparation |
+|---|---|
+| Build, program, automate, or debug | Timed coding or practical implementation task; code review and trade-off discussion. |
+| Query, analyse, model, or report data | Timed SQL/data exercise; interpretation, validation, and stakeholder explanation. |
+| Design systems, platforms, or architecture | System-design case; requirements clarification, trade-offs, diagram, and failure modes. |
+| Strategize, research, optimize, or advise | Written or verbal case study; prioritization, evidence, recommendation, and risks. |
+| Communicate with customers or stakeholders | Role-play or writing sample; clarity, discovery, expectation-setting, and escalation. |
+| Operate, assure quality, or manage risk | Practical scenario; triage, controls, incident response, and documentation. |
 
-## Study Plan Rules
+Every selected assessment must include:
 
-- Put prerequisites before advanced topics.
-- Keep modules small enough to complete in one study session.
-- Prefer active practice over passive reading.
-- Include at least one concrete deliverable for portfolio-relevant roles.
-- Make timelines realistic; avoid cramming too many tools into a short plan.
-- For senior roles, emphasize judgment, system design, tradeoffs, stakeholder communication, and leadership scenarios.
+1. A statement of the competency being assessed.
+2. Clear instructions, constraints, allowed assumptions, and a realistic time limit.
+3. Questions, task data, or a complete scenario.
+4. A model answer or completed example solution that explains the reasoning.
+5. A Scoring rubric with observable criteria and result bands.
+6. Remediation steps linked to the specific scoring weaknesses.
 
-## Citation Rules
+Do not provide answers to a live assessment, impersonate the learner, or make personal claims for them.
 
-- Cite URLs for all external learning resources.
-- Include provider names so the learner can judge credibility.
-- Use current web search for resource freshness.
-- Do not copy long passages from resources.
-- Summarize what each resource covers and how to use it.
-- Link each major generated section to the relevant source URLs.
+## 4. Source Synthesis And References
+
+- Use current, authoritative sources to check facts, terminology, tool behavior, and time-sensitive details.
+- Write original explanations and examples. Do not reproduce long source passages.
+- Resolve conflicting sources in the lesson; state meaningful uncertainty when it affects a recommendation.
+- Put provider, URL, access status, access date when freshness matters, and a concise purpose note only in `References And Further Practice`.
+- Treat every reference as optional. If removing the reference would make the lesson incomplete, move the missing explanation into the lesson.
+
+## 5. Completeness Checklist
+
+Before delivering a guide set, confirm:
+
+- [ ] Every required and preferred requirement has one full topic document.
+- [ ] The roadmap orders all documents by prerequisite and explains the expected proof of competence.
+- [ ] Every topic includes Beginner Foundations, Intermediate Application, and Advanced Judgment.
+- [ ] Every major concept has a direct explanation, role-relevant example, and practice check.
+- [ ] Every exercise has a completed solution, answer key, or concrete evaluation rubric.
+- [ ] Every topic has a practical deliverable and clear exit criteria.
+- [ ] Every assessment has a time limit, model answer or completed example solution, Scoring rubric, result bands, and remediation.
+- [ ] Every interview or behavioral prompt is truthful, using supplied background or placeholders only.
+- [ ] References are optional further practice rather than required learning steps.
+- [ ] Markdown and DOCX contain the same roadmap and topic-document content.

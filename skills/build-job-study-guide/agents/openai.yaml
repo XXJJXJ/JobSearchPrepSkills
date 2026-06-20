@@ -1,4 +1,4 @@
 interface:
   display_name: "Build Job Study Guide"
-  short_description: "Create Markdown or DOCX job study guides"
-  default_prompt: "Use $build-job-study-guide to turn this job analysis into a Markdown or DOCX study guide with free resources and 9-section study content modules with Q&A, flashcards, and source references."
+  short_description: "Create self-contained role study lessons"
+  default_prompt: "Use $build-job-study-guide to turn this job analysis into a roadmap and standalone beginner-to-advanced study lessons with practice, answer keys, assessments, and optional references."

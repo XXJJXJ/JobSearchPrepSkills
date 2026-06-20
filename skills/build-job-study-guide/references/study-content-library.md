@@ -1,305 +1,153 @@
-# Study Content Library
+# Content-First Teaching Library
 
-Use this library as reusable starter content for generated job-study documents. Copy, adapt, and trim sections so they match the target role and the user's background. Add role-specific technical material from current free resources found during live search. Treat "cheat sheet" and "cheatsheet" as the same requested output.
+Use these reusable patterns to write the actual lessons in a job study guide. Adapt them to the role and topic; do not output the patterns as empty headings or send the learner to a link for missing content.
 
-## Core Study Notes
+## Lesson Building Blocks
 
-### Role And Business Context
+### Explain A Concept
 
-Study goal: understand why the role exists, what outcomes it owns, and how success is measured.
+Teach each major concept in this order:
 
-Key ideas:
+1. **Purpose:** What problem it solves and why the target role needs it.
+2. **Plain-language definition:** Explain it without assuming prior vocabulary.
+3. **Mechanism:** Describe the important parts, inputs, outputs, and decision rules.
+4. **Role use:** Show when the learner would use it in a realistic responsibility.
+5. **Boundary:** State when it is not the right tool, what it cannot prove, or what it depends on.
 
-- A responsibility describes work to perform; an outcome describes the business result that work should create.
-- A strong candidate can connect daily tasks to business value, customer impact, risk reduction, revenue, cost savings, quality, speed, or compliance.
-- Role scope usually appears in verbs: "assist" suggests guided execution, "own" suggests accountability, "lead" suggests coordination and decision-making, and "define" suggests strategic authority.
+Use concrete nouns, small examples, and short causal explanations. Define abbreviations before using them.
 
-How to study:
+### Progress Through Levels
 
-- Rewrite each responsibility as: "I will help the organization achieve [outcome] by doing [activity] with [tools/stakeholders]."
-- Identify the top three outcomes the hiring team likely cares about.
-- Prepare one evidence story for each outcome.
-
-### Competency Evidence
-
-Study goal: turn requirements into proof points for resumes and interviews.
-
-Key ideas:
-
-- Employers screen for evidence, not familiarity. "Know SQL" is weaker than "used SQL to answer a business question, validate data quality, and explain the result."
-- Evidence has four parts: context, action, tool or method, and result.
-- Strong evidence uses scale where possible: users, revenue, records, time saved, error reduction, stakeholder count, or frequency.
-
-Evidence formula:
-
-```text
-I used [skill/tool/method] to [action] for [stakeholder/problem], resulting in [measurable or observable outcome].
-```
-
-### Learning A Tool Quickly
-
-Study goal: become credible with a required tool even before deep mastery.
-
-Key ideas:
-
-- Learn the tool's purpose before memorizing menus or commands.
-- Focus on the workflows the job actually needs.
-- Build one small artifact that proves practical use.
-
-Fast tool-learning loop:
-
-1. Name the job scenario the tool supports.
-2. Learn the minimum vocabulary.
-3. Follow one official beginner tutorial.
-4. Rebuild a tiny example without copying.
-5. Explain the tradeoffs, limits, and common mistakes.
-
-### Stakeholder Communication
-
-Study goal: explain work clearly to teammates, managers, customers, or executives.
-
-Key ideas:
-
-- Good workplace communication separates facts, interpretation, recommendation, and next action.
-- Senior communication usually starts with the decision or risk, then gives supporting detail.
-- When blocked, state the goal, the blocker, what you tried, the impact, and the decision needed.
-
-Status update pattern:
-
-```text
-Goal: [target outcome]
-Current state: [fact-based progress]
-Risk/blocker: [issue and impact]
-Recommendation: [next step or decision]
-Need: [owner, support, or deadline]
-```
-
-### Problem Solving
-
-Study goal: show structured thinking under ambiguity.
-
-Key ideas:
-
-- Start by clarifying the goal and constraints.
-- Break the problem into causes, options, tradeoffs, and next steps.
-- Use evidence before conclusions.
-- A practical answer acknowledges uncertainty and proposes a test or checkpoint.
-
-Problem-solving flow:
-
-1. Define the problem in one sentence.
-2. Identify who is affected and what success means.
-3. List likely causes or requirements.
-4. Choose the highest-impact next action.
-5. Explain tradeoffs and risks.
-6. Decide how to measure whether the action worked.
-
-## Cheat Sheets
-
-### Job Requirement To Study Topic Cheat Sheet
-
-| Job phrase | Study implication | Study output |
+| Level | Teach | Prove with |
 |---|---|---|
-| "Own" | Prepare for accountability and tradeoff questions | Ownership story and decision framework |
-| "Collaborate cross-functionally" | Learn stakeholder mapping and communication | Stakeholder map and status update examples |
-| "analyse" | Learn data, evidence, and interpretation | Worked analysis example with conclusion |
-| "Build" or "implement" | Learn hands-on workflow | Small project or demo artifact |
-| "Improve" or "optimize" | Learn baseline, metric, intervention, result | Before/after case study |
-| "Ensure compliance" | Learn rules, controls, auditability, and risk | Control checklist and risk scenario answers |
-| "Customer-facing" | Learn discovery, empathy, expectation-setting | Customer scenario Q&A |
-| "Fast-paced" | Learn prioritization and communication under pressure | Prioritization framework and examples |
+| Beginner | Vocabulary, purpose, core concepts, and a simple successful example. | Explain the concept and solve a bounded check. |
+| Intermediate | Repeatable workflow, realistic inputs, validation, and troubleshooting. | Complete a guided role scenario. |
+| Advanced | Trade-offs, ambiguity, constraints, scale, risk, and stakeholder judgment. | Defend a decision in a case with alternatives. |
 
-### STAR Interview Cheat Sheet
+Do not label a section as advanced merely because it uses harder terminology. It must require judgment between plausible options.
 
-Use STAR for behavioral answers:
+## Worked Example Pattern
 
-- Situation: context and stakes.
-- Task: your responsibility.
-- Action: what you personally did.
-- Result: outcome, metric, lesson, or next step.
+Use this shape whenever a concept has a procedure, decision, calculation, query, analysis, design, or communication output.
 
-Upgrade STAR with job relevance:
+```markdown
+### Worked Example: [Role Scenario]
 
-```text
-Situation: Similar context to the target role.
-Task: Responsibility aligned with the job requirement.
-Action: Skill, method, tool, and judgment used.
-Result: Business/user/team impact.
-Relevance: One sentence connecting the story to this role.
+**Goal:** [Outcome the role needs.]
+
+**Inputs and constraints:** [Facts, assumptions, data, deadline, risk, or stakeholder need.]
+
+**Approach:**
+1. [Step and why it comes first.]
+2. [Step and how to check it.]
+3. [Step and decision rule.]
+
+**Completed result:** [Concrete output, decision, query, design, message, or artifact.]
+
+**Why this works:** [Connect the steps to the core concept and the role outcome.]
+
+**What could go wrong:** [Failure mode and prevention.]
 ```
 
-Common mistakes:
+The completed result must be specific enough to inspect. When several results are valid, show one defensible result and explain the criteria used to judge it.
 
-- Spending too long on background.
-- Saying "we" without explaining your contribution.
-- Giving actions with no result.
-- Choosing a story that does not match the job's priorities.
+## Practice And Answer-Key Pattern
 
-### Technical Concept Mastery Cheat Sheet
+Use practice to move from recognition to application.
 
-For each required technical topic, prepare:
+```markdown
+### Practice Task: [Role Scenario]
 
-- Definition: explain it in plain language.
-- Use case: when and why it is used.
-- Workflow: steps to apply it.
-- Tradeoffs: limits, costs, risks, or alternatives.
-- Failure modes: common mistakes and how to detect them.
-- Evidence: one project, exercise, or example showing applied ability.
+**Task:** [What the learner must produce or decide.]
+**Constraints:** [Time, data, scope, quality, or stakeholder constraints.]
+**Success criteria:** [Observable requirements.]
 
-### Resource Evaluation Cheat Sheet
-
-Use this when choosing free study materials:
-
-- Is the provider authoritative for the topic?
-- Is the material current enough for the tool or regulation?
-- Does it teach the job's workflow, not only theory?
-- Does it include practice or examples?
-- Can the learner access it without payment?
-- Does it match the learner's level?
-- Does it help produce evidence for interviews, portfolios, or job tasks?
-
-### Interview Prep Cheat Sheet
-
-Before an interview, prepare:
-
-- 3 role-fit stories mapped to core responsibilities.
-- 2 technical explanations with examples.
-- 2 stakeholder or conflict stories.
-- 1 learning story showing how you closed a knowledge gap.
-- 1 prioritization story.
-- 3 thoughtful questions for the interviewer.
-
-Answer structure for technical interview questions:
-
-```text
-Short answer first.
-Explain the reasoning.
-Give an example from practice or a project.
-Mention tradeoffs or common mistakes.
-Connect back to the role.
+### Answer Key Or Evaluation Rubric
+- [Criterion]: [What a strong response includes and why.]
+- [Criterion]: [What a weak or incorrect response misses.]
 ```
 
-## Interview Questions And Model Answers
+For fixed-answer questions, provide the answer and reasoning. For open-ended work, provide a completed example solution plus criteria that allow an alternative valid approach to be scored fairly.
 
-Adapt these to the target role and replace bracketed text with role-specific details.
+## Troubleshooting Pattern
 
-### Role Understanding
+| Symptom | Likely cause | First check | Correction | Prevention |
+|---|---|---|---|---|
+| [Observed issue] | [Likely cause] | [Evidence to inspect] | [Concrete fix] | [Control or habit] |
 
-Q: What do you think is the main purpose of this role?
+Prioritize errors that would affect correctness, safety, compliance, cost, users, or credibility in the target role.
 
-A: The main purpose is to help the organization achieve [primary outcome] by [core responsibility]. The job analysis suggests the employer values [priority 1], [priority 2], and [priority 3], so I would focus on delivering reliable work, communicating progress clearly, and showing evidence that my skills can support those outcomes.
+## Timed Mock Assessment Pattern
 
-Q: Which responsibility in this role do you think will have the biggest impact?
+```markdown
+## Timed Assessment: [Role-Relevant Format]
 
-A: The highest-impact responsibility appears to be [responsibility] because it connects directly to [business/customer/team outcome]. I would approach it by clarifying success metrics, understanding stakeholder expectations, and creating a repeatable workflow so results are consistent.
+**Competencies assessed:** [Skills and judgment being tested.]
+**Time limit:** [Realistic duration.]
+**Instructions:** [Deliverable, constraints, assumptions, and what not to optimize prematurely.]
 
-### Skills And Tools
+### Assessment Prompt
+[Complete task, dataset description, case, or scenario.]
 
-Q: How would you learn a tool required by this job if you had limited time?
+### Model Answer or Completed Example Solution
+[Walk through the solution, decisions, checks, and trade-offs.]
 
-A: I would start with the job scenario the tool supports, then learn the minimum vocabulary and workflow needed for that scenario. I would use official free documentation or a free guided tutorial, build a small example, and then explain what I built, why the tool was useful, and where its limitations are. That gives me practical evidence instead of only theoretical familiarity.
+### Scoring rubric
+| Criterion | Strong | Partial | Missing |
+|---|---|---|---|
 
-Q: Tell me about a time you used a required skill to solve a problem.
+### Result Bands And Remediation
+- **Ready:** [Score range and next practice.]
+- **Developing:** [Score range and focused repair work.]
+- **Foundation needed:** [Score range and which earlier lesson material to revisit.]
+```
 
-A: I would use a STAR answer. For example: in [situation], I needed to [task]. I used [skill/tool/method] to [specific action]. The result was [outcome]. This matters for this role because the job requires [matching responsibility or qualification].
+Keep the format relevant to the role. A data role may need SQL and interpretation; a customer-facing role may need a written response or role-play; a systems role may need requirements, design, trade-offs, and failure handling.
 
-### Problem Solving
+## Interview And Evidence Pattern
 
-Q: How would you handle an ambiguous task with unclear requirements?
+### Technical Or Role Answer
 
-A: I would first clarify the desired outcome, deadline, stakeholders, and constraints. If some details were still unknown, I would make assumptions explicit and propose a small first step or prototype. I would communicate what I learned, what risks remain, and what decision is needed next. This keeps progress moving while reducing the chance of building the wrong thing.
+Use this answer flow:
 
-Q: What would you do if a project was at risk of missing a deadline?
+1. Give a direct answer or recommendation.
+2. Explain the reasoning, workflow, or decision rule.
+3. Use a concise role-relevant example.
+4. Name the important trade-off, limitation, or failure mode.
+5. Connect the answer to the target responsibility.
 
-A: I would assess the remaining work, identify the blocking issues, and separate must-have from nice-to-have scope. Then I would communicate the risk early with options: adjust scope, add support, change sequencing, or move the deadline. I would recommend the option that protects the most important outcome while being transparent about tradeoffs.
+### Truthful Evidence Prompt
 
-### Stakeholder Communication
+When user background is available, ask for a specific situation, personal action, tool or method, result, and lesson. When it is unavailable, use:
 
-Q: How do you explain technical or complex work to non-experts?
+```text
+Choose a real example from your work, study, volunteering, or project experience where you [relevant action].
+Situation: [What was happening and why it mattered]
+Task: [Your actual responsibility]
+Action: [What you personally did using this skill]
+Result: [Observed outcome, metric, or lesson]
+Role relevance: [How it prepares you for this job requirement]
+```
 
-A: I start with the decision or outcome the audience cares about, then explain only the details needed to understand the impact. I avoid jargon, use examples or visuals when helpful, and check whether the explanation supports the next decision. The goal is not to show everything I know; it is to help the stakeholder act confidently.
+Never turn a prompt into a claim that the learner has not supported.
 
-Q: How would you manage conflicting priorities from different stakeholders?
+## Retention Pattern
 
-A: I would clarify each stakeholder's goal, deadline, and impact, then compare the work against shared business priorities. If tradeoffs are needed, I would make them explicit and ask for alignment from the right decision-maker. I would document the decision so everyone understands what will be done now, what will wait, and why.
+End each topic with:
 
-### Learning And Adaptability
+- **Common misconceptions:** state the tempting but wrong belief, why it fails, and the correction.
+- **Flashcards:** ask about terms, decision rules, failure signals, and trade-offs; give concise answers.
+- **Final revision summary:** list the few concepts, procedures, checks, and judgment calls to revisit before an interview or test.
+- **Exit criteria:** use specific `I can...` statements tied to an explanation, deliverable, timed task, or interview answer.
 
-Q: How do you close a knowledge gap for a job requirement?
+Use retrieval and application, not rereading alone. After the learner completes the lesson, have them explain the workflow without notes, repeat a reduced-time practice task, and repair the weakest rubric criterion.
 
-A: I turn the requirement into a concrete learning target, find reputable free resources, and build a small practice artifact. I check my understanding by explaining the concept, applying it in a realistic scenario, and identifying common mistakes. If the gap is important for the role, I also prepare evidence I can show in an interview or portfolio.
+## Optional Reference Pattern
 
-Q: What is your approach when you make a mistake?
+Put references last, after the lesson is complete.
 
-A: I focus on understanding the cause, communicating the impact, fixing the issue, and preventing recurrence. I avoid hiding the mistake because timely communication reduces risk. After resolving it, I document the lesson or adjust the workflow so the same issue is less likely to happen again.
+| Provider | Resource | Access | Why it is optional |
+|---|---|---|---|
+| [Provider] | [Title and URL] | Free / free with account / paid | Verify a current detail, explore a variant, or get extra practice. |
 
-### Seniority And Judgment
-
-Q: How do you prioritize when everything feels important?
-
-A: I prioritize based on impact, urgency, dependencies, risk, and stakeholder commitments. I ask what outcome matters most, what work unlocks other work, and what happens if something is delayed. Then I communicate the priority order and the tradeoffs so expectations are explicit.
-
-Q: How would you decide whether to use a quick fix or a more durable solution?
-
-A: I would compare urgency, risk, user impact, cost of rework, and how likely the issue is to recur. A quick fix can be appropriate for a low-risk urgent problem if it is tracked and followed by a durable fix. For high-impact or repeated problems, I would favor a more durable solution because repeated quick fixes create hidden cost.
-
-## Practice Question Patterns
-
-Use these difficulty levels when generating the `Practice Questions` section:
-
-- Beginner: "What is [term]?", "Why is [concept] important?", "What is the difference between [A] and [B]?"
-- Intermediate: "How would you apply [concept] to [role scenario]?", "What steps would you follow to [task]?"
-- Advanced: "What tradeoffs would you consider when [decision]?", "How would you diagnose [complex problem]?"
-- Scenario-based: "A stakeholder/customer/user reports [situation]. What do you do first, and why?"
-- Interview-style: "Tell me about a time you used [skill]", "How would you explain [concept] to a non-expert?"
-
-Every question must have a matching `Q:` and `A:` answer. Answers should explain the reasoning, not just state a memorized response.
-Place the recommended answer and supporting detail directly under each practice question, including a concise explanation, example, tradeoff, or pitfall when useful for interview preparation.
-
-## Flashcard Patterns
-
-Use flashcards for terms, frameworks, formulas, commands, decision rules, and common mistakes.
-
-Examples:
-
-Front: What is the difference between a responsibility and an outcome?
-Back: A responsibility is work performed; an outcome is the result the work should create, such as reduced risk, improved quality, faster delivery, or better customer experience.
-
-Front: What should a strong interview answer include?
-Back: A direct answer, context, specific action, result, and a short connection back to the target role.
-
-Front: How should conflicting source explanations be handled?
-Back: Remove duplicates, combine compatible explanations into one clear version, and mention meaningful differences only when they affect understanding or practice.
-
-## Final Revision Summary Pattern
-
-Use this shape for the final section:
-
-- Most important concepts to remember.
-- Terms or definitions to memorize.
-- Common mistakes to avoid.
-- Practice tasks or examples to revisit.
-- Interview points to rehearse.
-- Source links worth reviewing again.
-
-## Review Checklist Pattern
-
-Use the review checklist to combine objectives, outcomes, concise notes, takeaways, and self-check items:
-
-- Learning objective: what the learner should understand or be able to do.
-- Expected outcome: the explanation, artifact, decision, or interview answer the learner can produce.
-- Concise note: the shortest useful reminder of the concept.
-- Takeaway: why the concept matters for the target role.
-- Self-check: an `I can...` statement tied to a job requirement or practice task.
-
-## Practice Task Starters
-
-Use these as role-specific assignments:
-
-- Create a one-page briefing explaining the role's top three business outcomes and how the required skills support them.
-- Build a small demo, analysis, workflow, or checklist using one P0 skill from the job analysis.
-- Write three STAR stories mapped to the job's responsibilities.
-- Create a glossary of 15 role-specific terms and explain each in plain language.
-- Compare two free learning resources and justify which one better prepares a candidate for this role.
-- Draft a stakeholder status update for a project that is blocked, delayed, or changing scope.
-- Prepare a mock interview answer for each must-have qualification.
+Use current sources to improve accuracy, but never write “see the link to learn this” for material the guide is expected to teach.
