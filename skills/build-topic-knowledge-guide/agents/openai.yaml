@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Topic Knowledge Guide"
+  short_description: "Create dense study guides from any topic"
+  default_prompt: "Use $build-topic-knowledge-guide to turn this topic into a dense, Q&A-driven study and knowledge guide with mechanisms, examples, cheat sheets, and a final checklist."
