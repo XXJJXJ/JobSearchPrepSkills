@@ -151,8 +151,47 @@ Return this handoff:
 4. **Research for accuracy.** Use user material first, then current primary sources, standards bodies, universities, or official documentation. Synthesize original explanations. Research supports factual accuracy; it must not carry the instructional load.
 5. **Write each document with the novice-complete contract.** Follow the exact structure and depth rules in `study-guide-rubric.md`. Use the patterns in `study-content-library.md`. For each topic, include two fully solved worked paths: a guided baseline and a failure, edge-case, or trade-off path.
 6. **Add role-relevant assessment preparation.** Match coding, data, system-design, writing, role-play, or operational exercises to the job evidence. Give the learner all starting data, constraints, steps, verification criteria, completed solution, scoring, and remediation needed to practise independently.
-7. **Offer optional consolidation after lesson completion.** After all foundation and role lesson documents are finished and integrated, ask the user whether they want a consolidated Markdown or DOCX document with topics ordered by the roadmap/dependency sequence. If the user confirms a format, create that consolidated document while preserving the separate lesson files and the established topic order.
+7. **Finalize and offer consolidation.** After all foundation and role lesson documents are finished, integrated, and validated, follow **Coordinator Finalization and Optional Consolidation**. Ask the user whether they want a single consolidated Markdown or DOCX document. Create the consolidated document only after the user chooses a format, while preserving the separate lesson files and the established topic order.
 8. **Validate before delivery.** Apply every gate in `lesson-depth-quality-gates.md`. For Markdown guides, run `sh scripts/validate-study-guide.sh <guide-directory>`. Fix all failures before presenting the guide.
+
+## Coordinator Finalization and Optional Consolidation
+
+After all foundation and role lesson documents have been completed, reviewed, integrated, and validated, the coordinator must perform a finalization step before closing the run.
+
+The coordinator must summarize the completed guide set for the user, including:
+
+* the generated `00-` documents,
+* all foundation lesson files,
+* all role lesson files,
+* any validation fixes applied,
+* any unresolved limitations or assumptions.
+
+Then the coordinator must ask the user whether they want the generated lessons consolidated into a single document.
+
+The coordinator must offer at least these consolidation options:
+
+1. A single consolidated Markdown file, for example `consolidated-study-guide.md`.
+2. A single consolidated DOCX file, for example `consolidated-study-guide.docx`.
+
+The consolidated document must preserve the established roadmap and dependency order:
+
+1. study roadmap,
+2. requirement coverage map,
+3. canonical prerequisite registry,
+4. foundation lessons in sequence,
+5. role lessons in sequence,
+6. capstone and assessment materials.
+
+The coordinator must not delete or replace the separate lesson files. Consolidation is an additional deliverable only.
+
+If the user chooses Markdown, create one consolidated `.md` file that combines the completed documents in roadmap/dependency order.
+
+If the user chooses DOCX, create one consolidated `.docx` file with equivalent content, preserving headings, tables, lesson order, assessment sections, scoring rubrics, and remediation guidance.
+
+If the user declines consolidation, the coordinator must leave the guide as separate files and state that consolidation was skipped by user choice.
+
+If the user does not respond or approval is unavailable in the current run, the coordinator must not create the consolidated document. Instead, report that the separate lesson files are complete and that consolidation is pending user choice.
+
 
 ## Non-Negotiable Teaching Rules
 
