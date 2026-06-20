@@ -48,7 +48,8 @@ For an in-chat request, present the roadmap and coverage map first, then documen
 4. **Research for accuracy.** Use user material first, then current primary sources, standards bodies, universities, or official documentation. Synthesize original explanations. Research supports factual accuracy; it must not carry the instructional load.
 5. **Write each document with the novice-complete contract.** Follow the exact structure and depth rules in `study-guide-rubric.md`. Use the patterns in `study-content-library.md`. For each topic, include two fully solved worked paths: a guided baseline and a failure, edge-case, or trade-off path.
 6. **Add role-relevant assessment preparation.** Match coding, data, system-design, writing, role-play, or operational exercises to the job evidence. Give the learner all starting data, constraints, steps, verification criteria, completed solution, scoring, and remediation needed to practise independently.
-7. **Validate before delivery.** Apply every gate in `lesson-depth-quality-gates.md`. For Markdown guides, run `sh scripts/validate-study-guide.sh <guide-directory>`. Fix all failures before presenting the guide.
+7. **Offer optional consolidation after lesson completion.** After all foundation and role lesson documents are finished and integrated, ask the user whether they want a consolidated Markdown or DOCX document with topics ordered by the roadmap/dependency sequence. If the user confirms a format, create that consolidated document while preserving the separate lesson files and the established topic order.
+8. **Validate before delivery.** Apply every gate in `lesson-depth-quality-gates.md`. For Markdown guides, run `sh scripts/validate-study-guide.sh <guide-directory>`. Fix all failures before presenting the guide.
 
 ## Parallel Topic Production
 
@@ -83,5 +84,6 @@ Before responding, confirm that:
 - Every intermediate task can be started and assessed without another tutorial, repository, or external link.
 - Every advanced section compares options and justifies a context-specific decision rather than asserting a recommendation.
 - Every assessment has a complete prompt, constraints, model solution, scoring rubric, result bands, and targeted remediation.
+- After all lesson documents are complete, the user is asked whether they want a consolidated Markdown or DOCX document ordered by the roadmap/dependency sequence.
 - References are optional and Markdown/DOCX have equivalent content.
 - Personal evidence prompts remain truthful and use placeholders where background is absent.
