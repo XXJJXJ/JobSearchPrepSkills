@@ -1,154 +1,146 @@
-# Content-First Study Guide Rubric
+# Novice-Complete Study Guide Rubric
 
-Use this rubric for every `$build-job-study-guide` output. The guide must teach the role requirements directly; external resources may deepen or verify learning but must never carry essential instruction.
+Use this rubric for every `$build-job-study-guide` output. The default learner has no role-relevant prior knowledge. The guide must teach them enough to perform intermediate application and evaluate advanced choices without external instruction.
 
-## 1. Guide Set
+## 1. Guide-Level Contract
 
-### 1.1 Study Roadmap
+### 1.1 Roadmap and Coverage Map
 
-Create `00-study-roadmap.md` or its DOCX equivalent. Include:
+Create `00-study-roadmap.md` and `00-requirement-coverage-map.md` before topic documents.
 
-- Target role, source job analysis, and stated assumptions.
-- A short readiness summary: the outcomes, responsibilities, and assessment expectations being prepared for.
-- A dependency-ordered table with topic document number, job evidence, prerequisite, expected outcome, practical proof, and likely assessment format.
-- An explicit note when an assessment type is inferred rather than stated in the job material.
-- A sequence that starts with foundational concepts and ends with role simulation and interview rehearsal.
+The roadmap must state target role, source analysis, learner assumption, readiness outcome, assessment assumptions, a dependency-ordered sequence, practical proof, and capstone. Each row must identify whether it is a foundation or role lesson.
 
-### 1.2 Topic Documents
+The coverage map must include one row for every job requirement:
 
-Create one numbered standalone document for every required and preferred requirement. Split a compound job statement into separate learnable competencies; do not merge requirements merely because they use related tools or workflows.
+| Job evidence | Requirement | Role lesson | Foundation lessons | Practical proof | Assessment |
+|---|---|---|---|---|---|
 
-Each document must define unfamiliar terms and teach every prerequisite idea needed to follow its examples. It may reference an earlier topic document for extended practice, but it must include enough explanation to be understood without an external link.
+Do not use a broad document such as “full-stack engineering” to cover TypeScript, React, Node.js, API design, and databases. Split them into distinct role lessons, then share foundation lessons where appropriate.
 
-Use this document shape.
+### 1.2 Foundation Lessons
+
+Create a foundation lesson whenever a beginner would need a concept before understanding a role lesson’s first example. Examples include programming values before TypeScript types, HTTP before API design, identity and permissions before access-control design, or metrics before reliability targets.
+
+Foundation lessons must be numbered before dependent role lessons and have `foundation` in the filename. They teach transferable mechanisms; role lessons use those mechanisms in job-specific situations.
+
+## 2. Topic Document Contract
+
+Use this exact shape for every foundation and role lesson. Add subsections when a concept needs more explanation; do not remove a section to shorten the lesson.
 
 ```markdown
 # [Topic] for [Target Role]
 
-## Role Relevance And Outcomes
-- Job requirement and responsibility evidence:
-- What the learner will be able to explain, do, and demonstrate:
-- Prerequisites and minimum definitions:
+## Role Relevance and Outcomes
+- Job evidence or foundation dependency:
+- What the learner will explain, do, and demonstrate:
+
+## Learner Readiness and Concept Map
+- Starting knowledge assumed: none / supplied knowledge only
+- Terms and prerequisites taught or recapped before use:
+- Concept flow: [concept] → [mechanism] → [role use] → [decision]
 
 ## Beginner Foundations
-### Plain-Language Explanation
-### Glossary
-### Core Concepts And How They Connect
-### Worked Example
-### Beginner Check With Answer Key
+### Purpose and Plain-Language Definition
+### Terms, Inputs, Outputs, and Decision Rules
+### Mechanism Step by Step
+### Boundary: What This Does Not Guarantee
+### Beginner Check With Reasoned Answer
+
+## Worked Path 1: Guided Baseline
+### Goal, Starting State, and Constraints
+### Inputs and Setup
+### Numbered Approach With Why and Verification
+### Completed Result
+### Why the Result Works
+
+## Worked Path 2: Failure, Edge Case, or Trade-off
+### Scenario and Failure Mechanism
+### Diagnosis
+### Corrected or Alternative Approach
+### Verification and Prevention
 
 ## Intermediate Application
-### Role Workflow
+### Repeatable Workflow
 ### Guided Role Scenario
-### Practice Task
-### Model Answer or Completed Example Solution
-### Troubleshooting And Common Failure Modes
+### Practice Task With Starting Material
+### Completed Solution With Reasoning
+### Troubleshooting and Common Failure Modes
 
 ## Advanced Judgment
-### Trade-offs, Constraints, And Edge Cases
-### Quality, Scale, Risk, Or Compliance Considerations
-### Advanced Role Case And Recommended Reasoning
+### Options and Selection Criteria
+### Quality, Scale, Risk, Cost, or Compliance Effects
+### Advanced Role Case and Decision Record
 
 ## Practical Deliverable
-- Instructions:
-- Expected artifact:
-- Quality criteria:
+- Instructions, expected artifact, self-review method, quality criteria
 
 ## Timed Assessment
-- Assessment format and why it is relevant:
-- Instructions and time limit:
-- Questions or scenario:
-- Model answer or completed example solution:
-- Scoring rubric:
-- Result bands and remediation:
+- Competency, format, time, constraints, complete prompt, model solution, scoring, bands, remediation
 
-## Interview And Evidence Preparation
-### Technical Or Role Question With Model Answer
-### Truthful evidence prompt
+## Interview and Evidence Preparation
+### Question and Model Answer
+### Truthful Evidence Prompt
 
-## Retention And Exit Criteria
-### Common Misconceptions
-### Flashcards
-### Final Revision Summary
-### I can... Exit Criteria
+## Retention and Exit Criteria
+### Misconceptions, Flashcards, Revision Summary, I Can Statements
 
-## References And Further Practice
+## References and Further Practice
 | Provider | Resource | Access | Why it is optional |
 |---|---|---|---|
 ```
 
-## 2. Lesson Quality Rules
+## 3. Minimum Instructional Depth
 
 ### Beginner Foundations
 
-- Explain the topic in plain language before using specialist terms.
-- Define each abbreviation, concept, input, output, and decision rule that matters to the role.
-- Use a small worked example with inputs, steps, result, and an explanation of why the result is correct.
-- Include answer-keyed checks that test understanding rather than recall alone.
+For every concept used later in the lesson:
+
+1. State the purpose and the problem it solves.
+2. Give a plain-language definition before specialist language.
+3. Define the inputs, outputs, important parts, and decision rules.
+4. Explain the mechanism in a sequence a beginner can trace.
+5. Show a small result and explain why it is correct.
+6. State a boundary: what the concept cannot prove, control, or replace.
+
+If an example contains code, query syntax, a calculation, a diagram, or a policy rule, explain each non-obvious line, field, operator, arrow, or decision before asking the learner to modify it.
+
+### Worked Paths
+
+Each worked path must include a goal, starting state, concrete inputs, constraints, numbered steps, completed result, verification method, explanation of why it works, and prevention of the relevant failure. Path 1 teaches the normal route. Path 2 teaches an error, edge case, unsafe shortcut, or competing option. Do not label a paragraph “worked example” when it omits the intermediate reasoning.
 
 ### Intermediate Application
 
-- Convert theory into a repeatable workflow the learner can use in the target role.
-- Include a realistic scenario, constraints, and a guided task with enough detail to begin without another tutorial.
-- Show a completed solution or give specific, observable evaluation criteria when several solutions are valid.
-- Explain common mistakes, how to detect them, and how to correct them.
+Intermediate tasks must provide all material required to start: environment/setup assumptions, data or placeholders, role scenario, deliverable, procedure, success criteria, and verification method. A completed solution must show the result and the reasoning behind each material decision. The troubleshooting table must state symptom, likely cause, first diagnostic check, correction, and prevention.
 
 ### Advanced Judgment
 
-- Explain relevant trade-offs, alternatives, failure modes, and the reasons a choice changes with context.
-- Cover the scale, performance, reliability, security, cost, quality, regulatory, or stakeholder concerns that apply to the subject.
-- Use a role-relevant case that requires prioritization or judgment, then show the recommended reasoning—not only the conclusion.
-- Increase emphasis on ownership, ambiguity, communication, and decision-making for senior roles.
+Advanced material must not be a more confident assertion. Compare at least two credible options. State the criteria that favour each option, including relevant correctness, security, reliability, scale, cost, usability, compliance, or stakeholder effects. The role case must record facts, assumptions, options, decision, rationale, consequences, residual risk, and what evidence would reverse the decision.
 
-### Practical Deliverable And Retention
+## 4. Assessment and Evidence Rules
 
-- Define a practical artifact that demonstrates the competency: analysis, implementation, briefing, workflow, design, checklist, or role-play output.
-- State the quality bar and how the learner can review their own work.
-- Include misconceptions, flashcards, a concise revision summary, and observable `I can...` exit criteria.
+Select only formats supported by the role or a clearly labelled inference. Every timed assessment must state competency, time, permitted assumptions, full scenario/data, deliverable, model answer, scoring rubric, result bands, and targeted remediation.
 
-## 3. Assessment Selection And Design
+Use placeholders when background is absent. Never turn an evidence prompt into an unsupported personal claim.
 
-Select only assessment types supported by the job requirements or reasonably implied by the role. Label inferred formats clearly.
+## 5. Rejection Conditions
 
-| Role signal | Appropriate preparation |
-|---|---|
-| Build, program, automate, or debug | Timed coding or practical implementation task; code review and trade-off discussion. |
-| Query, analyse, model, or report data | Timed SQL/data exercise; interpretation, validation, and stakeholder explanation. |
-| Design systems, platforms, or architecture | System-design case; requirements clarification, trade-offs, diagram, and failure modes. |
-| Strategize, research, optimize, or advise | Written or verbal case study; prioritization, evidence, recommendation, and risks. |
-| Communicate with customers or stakeholders | Role-play or writing sample; clarity, discovery, expectation-setting, and escalation. |
-| Operate, assure quality, or manage risk | Practical scenario; triage, controls, incident response, and documentation. |
+Reject and revise a document if any of the following is true:
 
-Every selected assessment must include:
+- A learner must know an undefined term, notation, tool, or prerequisite to read an example.
+- Code, data, a diagram, or a workflow has a non-obvious step without an explanation of what it does and why.
+- A practice task depends on an external tutorial, unstated setup, unavailable data, or an answer that only names a solution.
+- A model answer gives a conclusion but not the reasoning, verification, or trade-off behind it.
+- An advanced section offers one recommendation without credible alternatives and selection criteria.
+- An external reference supplies an essential concept or procedure missing from the lesson.
+- A job requirement lacks a distinct mapped role lesson, or a dependent lesson lacks a mapped foundation/recap.
 
-1. A statement of the competency being assessed.
-2. Clear instructions, constraints, allowed assumptions, and a realistic time limit.
-3. Questions, task data, or a complete scenario.
-4. A model answer or completed example solution that explains the reasoning.
-5. A Scoring rubric with observable criteria and result bands.
-6. Remediation steps linked to the specific scoring weaknesses.
+## 6. Final Checklist
 
-Do not provide answers to a live assessment, impersonate the learner, or make personal claims for them.
-
-## 4. Source Synthesis And References
-
-- Use current, authoritative sources to check facts, terminology, tool behavior, and time-sensitive details.
-- Write original explanations and examples. Do not reproduce long source passages.
-- Resolve conflicting sources in the lesson; state meaningful uncertainty when it affects a recommendation.
-- Put provider, URL, access status, access date when freshness matters, and a concise purpose note only in `References And Further Practice`.
-- Treat every reference as optional. If removing the reference would make the lesson incomplete, move the missing explanation into the lesson.
-
-## 5. Completeness Checklist
-
-Before delivering a guide set, confirm:
-
-- [ ] Every required and preferred requirement has one full topic document.
-- [ ] The roadmap orders all documents by prerequisite and explains the expected proof of competence.
-- [ ] Every topic includes Beginner Foundations, Intermediate Application, and Advanced Judgment.
-- [ ] Every major concept has a direct explanation, role-relevant example, and practice check.
-- [ ] Every exercise has a completed solution, answer key, or concrete evaluation rubric.
-- [ ] Every topic has a practical deliverable and clear exit criteria.
-- [ ] Every assessment has a time limit, model answer or completed example solution, Scoring rubric, result bands, and remediation.
-- [ ] Every interview or behavioral prompt is truthful, using supplied background or placeholders only.
-- [ ] References are optional further practice rather than required learning steps.
-- [ ] Markdown and DOCX contain the same roadmap and topic-document content.
+- [ ] Roadmap, coverage map, foundation lessons, and distinct role lessons exist.
+- [ ] Every prerequisite is taught or recapped before use.
+- [ ] Every lesson has two complete worked paths.
+- [ ] Every intermediate practice task is executable and fully solved in the document.
+- [ ] Every advanced case compares options and records a defensible decision.
+- [ ] Every assessment and evidence prompt is complete and truthful.
+- [ ] Optional references are not prerequisites for learning.
+- [ ] Markdown and DOCX provide equivalent content.

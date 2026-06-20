@@ -1,153 +1,141 @@
 # Content-First Teaching Library
 
-Use these reusable patterns to write the actual lessons in a job study guide. Adapt them to the role and topic; do not output the patterns as empty headings or send the learner to a link for missing content.
+Use these patterns to write complete lessons. Adapt the nouns, data, risks, and decisions to the target role; do not output empty template headings.
 
-## Lesson Building Blocks
+## 1. Explain a Concept Before Applying It
 
-### Explain A Concept
+Use this ladder for each concept a beginner needs:
 
-Teach each major concept in this order:
+1. **Purpose:** Name the real problem the concept solves for this role.
+2. **Plain definition:** Explain it without relying on another undefined term.
+3. **Parts:** Define inputs, outputs, states, actors, and data involved.
+4. **Mechanism:** Trace what happens in order and why each step matters.
+5. **Decision rule:** State when to choose, reject, or escalate it.
+6. **Boundary:** State what the concept does not guarantee and the companion control it needs.
 
-1. **Purpose:** What problem it solves and why the target role needs it.
-2. **Plain-language definition:** Explain it without assuming prior vocabulary.
-3. **Mechanism:** Describe the important parts, inputs, outputs, and decision rules.
-4. **Role use:** Show when the learner would use it in a realistic responsibility.
-5. **Boundary:** State when it is not the right tool, what it cannot prove, or what it depends on.
+Before an example, list the terms it uses. Explain code or formal notation immediately after the relevant line, rather than assuming the learner can infer it.
 
-Use concrete nouns, small examples, and short causal explanations. Define abbreviations before using them.
+## 2. Guided Baseline Worked Path
 
-### Progress Through Levels
-
-| Level | Teach | Prove with |
-|---|---|---|
-| Beginner | Vocabulary, purpose, core concepts, and a simple successful example. | Explain the concept and solve a bounded check. |
-| Intermediate | Repeatable workflow, realistic inputs, validation, and troubleshooting. | Complete a guided role scenario. |
-| Advanced | Trade-offs, ambiguity, constraints, scale, risk, and stakeholder judgment. | Defend a decision in a case with alternatives. |
-
-Do not label a section as advanced merely because it uses harder terminology. It must require judgment between plausible options.
-
-## Worked Example Pattern
-
-Use this shape whenever a concept has a procedure, decision, calculation, query, analysis, design, or communication output.
+Use the first path to teach a normal, successful route.
 
 ```markdown
-### Worked Example: [Role Scenario]
+## Worked Path 1: Guided Baseline
 
-**Goal:** [Outcome the role needs.]
+**Goal:** [Role outcome.]  
+**Starting state:** [What exists and what the learner knows.]  
+**Inputs:** [Concrete values, data, or stakeholders.]  
+**Constraints:** [Security, time, quality, or policy limits.]
 
-**Inputs and constraints:** [Facts, assumptions, data, deadline, risk, or stakeholder need.]
+### Step-by-step approach
+1. **[Action]** — What happens, why it is first, and what input/output changes.
+   **Check:** [Observable confirmation.]
+2. **[Action]** — Explain the mechanism and decision rule.
+   **Check:** [Observable confirmation.]
 
-**Approach:**
-1. [Step and why it comes first.]
-2. [Step and how to check it.]
-3. [Step and decision rule.]
+### Completed result
+[Complete code, query, decision record, message, or diagram.]  
 
-**Completed result:** [Concrete output, decision, query, design, message, or artifact.]
+### Why this works
+[Trace the result back to the mechanism and role outcome.]  
 
-**Why this works:** [Connect the steps to the core concept and the role outcome.]
-
-**What could go wrong:** [Failure mode and prevention.]
+### Verify it
+[Exact expected output, test, review question, or observable user outcome.]
 ```
 
-The completed result must be specific enough to inspect. When several results are valid, show one defensible result and explain the criteria used to judge it.
+For technical work, include runnable or internally consistent code/data plus its expected result. For non-technical work, include the full finished artefact and commentary that identifies each effective choice.
 
-## Practice And Answer-Key Pattern
+## 3. Failure, Edge Case, or Trade-off Worked Path
 
-Use practice to move from recognition to application.
+Use the second path to make limits and diagnostics teachable.
+
+```markdown
+## Worked Path 2: Failure, Edge Case, or Trade-off
+
+**Scenario:** [Concrete variation from the baseline.]  
+**Observed symptom:** [What user/system/stakeholder sees.]  
+**Failure mechanism:** [Why the baseline no longer works.]
+
+### Diagnose
+1. [First signal to inspect and why.]
+2. [How the evidence distinguishes credible causes.]
+
+### Correct or choose an alternative
+[Complete corrected implementation or decision.]  
+
+### Verify and prevent recurrence
+[Expected result, test/monitor/control, and prevention habit.]
+```
+
+Do not call a generic warning an edge case. Show the changed input or constraint, the causal mechanism, and the corrected outcome.
+
+## 4. Intermediate Practice and Solution
+
+Every task must be independently executable.
 
 ```markdown
 ### Practice Task: [Role Scenario]
 
-**Task:** [What the learner must produce or decide.]
-**Constraints:** [Time, data, scope, quality, or stakeholder constraints.]
+**Starting material:** [Data, code, brief, table, or explicit placeholders.]  
+**Task:** [Exact deliverable.]  
+**Method:** [Steps the learner should follow.]  
+**Constraints:** [Time, data, security, scope, quality.]  
+**Verification:** [How the learner checks correctness.]  
 **Success criteria:** [Observable requirements.]
 
-### Answer Key Or Evaluation Rubric
-- [Criterion]: [What a strong response includes and why.]
-- [Criterion]: [What a weak or incorrect response misses.]
+### Completed Solution With Reasoning
+1. [Decision/action and why it meets the criterion.]
+2. [Completed artefact or relevant excerpt, annotated.]
+3. [Verification result and what a different result means.]
 ```
 
-For fixed-answer questions, provide the answer and reasoning. For open-ended work, provide a completed example solution plus criteria that allow an alternative valid approach to be scored fairly.
+Use open-ended rubrics only when more than one result is valid. State what weak work misses and how to repair it.
 
-## Troubleshooting Pattern
+## 5. Advanced Decision Record
 
-| Symptom | Likely cause | First check | Correction | Prevention |
-|---|---|---|---|---|
-| [Observed issue] | [Likely cause] | [Evidence to inspect] | [Concrete fix] | [Control or habit] |
-
-Prioritize errors that would affect correctness, safety, compliance, cost, users, or credibility in the target role.
-
-## Timed Mock Assessment Pattern
+Use this structure whenever the role needs judgment rather than a fixed procedure.
 
 ```markdown
-## Timed Assessment: [Role-Relevant Format]
+### Advanced Role Case and Decision Record
 
-**Competencies assessed:** [Skills and judgment being tested.]
-**Time limit:** [Realistic duration.]
-**Instructions:** [Deliverable, constraints, assumptions, and what not to optimize prematurely.]
+**Facts:** [Verified facts.]  
+**Assumptions:** [Unknowns treated as assumptions.]  
+**Decision:** [What must be chosen and by whom.]
 
-### Assessment Prompt
-[Complete task, dataset description, case, or scenario.]
-
-### Model Answer or Completed Example Solution
-[Walk through the solution, decisions, checks, and trade-offs.]
-
-### Scoring rubric
-| Criterion | Strong | Partial | Missing |
+| Option | Benefits | Costs and risks | Best when |
 |---|---|---|---|
+| A | | | |
+| B | | | |
 
-### Result Bands And Remediation
-- **Ready:** [Score range and next practice.]
-- **Developing:** [Score range and focused repair work.]
-- **Foundation needed:** [Score range and which earlier lesson material to revisit.]
+**Selection criteria:** [Prioritised criteria and thresholds.]  
+**Recommended decision:** [Option and reasoning tied to facts.]  
+**Consequences:** [What becomes harder, slower, riskier, or deferred.]  
+**Residual risk and control:** [What remains and how it is observed.]  
+**Revisit when:** [New evidence that would change the decision.]
 ```
 
-Keep the format relevant to the role. A data role may need SQL and interpretation; a customer-facing role may need a written response or role-play; a systems role may need requirements, design, trade-offs, and failure handling.
+An advanced explanation succeeds only when the learner can explain why a plausible alternative loses under the stated constraints.
 
-## Interview And Evidence Pattern
+## 6. Non-Technical Role Artefacts
 
-### Technical Or Role Answer
+Teach product, communication, leadership, and operations with completed outputs, not slogans.
 
-Use this answer flow:
+| Competency | Completed artefact to teach from | Commentary must explain |
+|---|---|---|
+| Product discovery | Interview notes and problem statement | Evidence, assumptions, non-goals, success measure |
+| Technical planning | RFC or decision record | Options, decision owner, risks, rollout, reversal |
+| Stakeholder communication | Status update or launch brief | Audience, decision/action, known/unknown facts, next step |
+| Incident response | Incident update and runbook step | Impact, scope, safe mitigation, escalation, follow-up |
+| Code review | Review comments and PR summary | Severity, evidence, requested change, verification |
 
-1. Give a direct answer or recommendation.
-2. Explain the reasoning, workflow, or decision rule.
-3. Use a concise role-relevant example.
-4. Name the important trade-off, limitation, or failure mode.
-5. Connect the answer to the target responsibility.
+Show a weak version only when it helps explain a concrete correction. Never ask the learner to “communicate clearly” without showing a complete message and why its wording is appropriate.
 
-### Truthful Evidence Prompt
+## 7. Retention and Assessment
 
-When user background is available, ask for a specific situation, personal action, tool or method, result, and lesson. When it is unavailable, use:
+Use flashcards for terms, decision rules, failure signals, and trade-offs. Make every exit criterion observable: “I can construct an access-policy table for a supplied scenario and explain one denied path,” not “I understand access control.”
 
-```text
-Choose a real example from your work, study, volunteering, or project experience where you [relevant action].
-Situation: [What was happening and why it mattered]
-Task: [Your actual responsibility]
-Action: [What you personally did using this skill]
-Result: [Observed outcome, metric, or lesson]
-Role relevance: [How it prepares you for this job requirement]
-```
+Timed assessments need the same starting materials and full solution as ordinary practice, plus an explicit time limit, rubric, readiness bands, and remediation that points to a named concept or worked path.
 
-Never turn a prompt into a claim that the learner has not supported.
+## 8. Optional References
 
-## Retention Pattern
-
-End each topic with:
-
-- **Common misconceptions:** state the tempting but wrong belief, why it fails, and the correction.
-- **Flashcards:** ask about terms, decision rules, failure signals, and trade-offs; give concise answers.
-- **Final revision summary:** list the few concepts, procedures, checks, and judgment calls to revisit before an interview or test.
-- **Exit criteria:** use specific `I can...` statements tied to an explanation, deliverable, timed task, or interview answer.
-
-Use retrieval and application, not rereading alone. After the learner completes the lesson, have them explain the workflow without notes, repeat a reduced-time practice task, and repair the weakest rubric criterion.
-
-## Optional Reference Pattern
-
-Put references last, after the lesson is complete.
-
-| Provider | Resource | Access | Why it is optional |
-|---|---|---|---|
-| [Provider] | [Title and URL] | Free / free with account / paid | Verify a current detail, explore a variant, or get extra practice. |
-
-Use current sources to improve accuracy, but never write “see the link to learn this” for material the guide is expected to teach.
+Place references last. A reference may verify current tool behaviour, add variants, or offer extra practice. If removing it leaves the learner unable to perform a required procedure, move that explanation into the lesson.

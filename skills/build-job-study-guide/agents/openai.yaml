@@ -1,4 +1,4 @@
 interface:
   display_name: "Build Job Study Guide"
-  short_description: "Create self-contained role study lessons"
-  default_prompt: "Use $build-job-study-guide to turn this job analysis into a roadmap and standalone beginner-to-advanced study lessons with practice, answer keys, assessments, and optional references."
+  short_description: "Create novice-complete role study lessons"
+  default_prompt: "Use $build-job-study-guide to turn this job analysis into a self-contained, novice-complete study guide. Create prerequisite foundation lessons, a requirement coverage map, fully explained worked paths, executable practice with complete solutions, and advanced trade-off reasoning."
